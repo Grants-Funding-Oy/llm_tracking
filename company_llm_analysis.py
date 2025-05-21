@@ -4,6 +4,7 @@ import csv
 import openai
 import google.generativeai as genai
 import pandas as pd
+import json
 from datetime import datetime
 from dotenv import load_dotenv
 from agents import Agent, Runner, WebSearchTool
@@ -17,51 +18,134 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 # Set up Google Gemini API key
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
-def get_gpt4o_response(messages):
+def get_gpt4o_response(messages, verbose=True):
     """
     Get a response from GPT-4o based on the conversation history
     """
     try:
+        if verbose:
+            print("\n" + "="*80)
+            print("GPT-4O KYSELY:")
+            last_message = messages[-1]['content'] if messages else "Ei viestiä"
+            print(f"{last_message}")
+            print("="*80)
+            
         response = openai.chat.completions.create(
             model="gpt-4o",
             messages=messages
         )
-        return response.choices[0].message.content
+        
+        content = response.choices[0].message.content
+        
+        if verbose:
+            print("\n" + "-"*80)
+            print("GPT-4O VASTAUS:")
+            print("-"*80)
+            print(content[:1000] + "..." if len(content) > 1000 else content)
+            print("-"*80 + "\n")
+            
+        return content
     except Exception as e:
         print(f"Error getting response from OpenAI: {e}")
         return f"Error: {str(e)}"
 
-def get_o3_response(messages):
+def get_o3_response(messages, verbose=True):
     """
     Get a response from OpenAI o3 model
     """
     try:
+        if verbose:
+            print("\n" + "="*80)
+            print("O3 ANALYYSI KYSELY:")
+            last_message = messages[-1]['content'] if messages else "Ei viestiä"
+            print(f"{last_message[:500]}...")
+            print("="*80)
+            
         response = openai.chat.completions.create(
             model="o3",
             messages=messages
         )
-        return response.choices[0].message.content
+        
+        content = response.choices[0].message.content
+        
+        if verbose:
+            print("\n" + "-"*80)
+            print("O3 ANALYYSI VASTAUS:")
+            print("-"*80)
+            print(content[:1000] + "..." if len(content) > 1000 else content)
+            print("-"*80 + "\n")
+            
+        return content
     except Exception as e:
         print(f"Error getting response from OpenAI o3: {e}")
         return f"Error: {str(e)}"
 
-def get_gemini_response(prompt):
+def get_gemini_response(prompt, verbose=True):
     """
     Get a response from Gemini 2.0 Flash Lite
     """
     try:
+        if verbose:
+            print("\n" + "="*80)
+            print("GEMINI KYSELY:")
+            print(f"{prompt}")
+            print("="*80)
+            
         model = genai.GenerativeModel('gemini-2.0-flash-lite')
         response = model.generate_content(prompt)
-        return response.text
+        
+        content = response.text
+        
+        if verbose:
+            print("\n" + "-"*80)
+            print("GEMINI VASTAUS:")
+            print("-"*80)
+            print(content[:1000] + "..." if len(content) > 1000 else content)
+            print("-"*80 + "\n")
+            
+        return content
     except Exception as e:
         print(f"Error getting response from Gemini: {e}")
         return f"Error: {str(e)}"
 
-def get_agent_with_websearch_response(query):
+class WebSearchTracker:
+    """Helper class to track web search calls"""
+    def __init__(self):
+        self.searches = []
+        
+    def add_search(self, query, results):
+        self.searches.append({"query": query, "results": results})
+        
+    def get_last_search(self):
+        return self.searches[-1] if self.searches else None
+        
+    def get_all_searches(self):
+        return self.searches
+
+# Global tracker for web searches
+web_search_tracker = WebSearchTracker()
+
+def get_agent_with_websearch_response(query, verbose=True):
     """
     Get a response from OpenAI GPT-4o agent with web search capability
     """
     try:
+        # Create a callback to track tool usage
+        def tool_callback(run_id, tool_call, chunk=None):
+            if tool_call.tool_name == "web_search":
+                # This is a web search call
+                if verbose:
+                    print(f"\n🔍 WEB SEARCH: {tool_call.tool_input}")
+                    if chunk:
+                        print(f"🌐 HAKUTULOS: {chunk}")
+
+        if verbose:
+            print("\n" + "="*80)
+            print("AGENTTI + WEB SEARCH KYSELY:")
+            print(f"{query}")
+            print("="*80)
+        
+        # Create the agent
         agent = Agent(
             name="SearchAgent",
             model="gpt-4o",
@@ -69,13 +153,59 @@ def get_agent_with_websearch_response(query):
             tools=[WebSearchTool()]
         )
         
-        result = Runner.run_sync(agent, query)
-        return result.final_output
+        # Run the agent
+        try:
+            # Attempt to run with trace
+            result = Runner.run_sync(
+                agent, 
+                query,
+                tool_callback=tool_callback
+            )
+        except TypeError:
+            # Fallback if tool_callback parameter not supported
+            print("Callback parametri ei ole tuettu - ajetaan ilman seurantaa")
+            result = Runner.run_sync(agent, query)
+        
+        final_output = result.final_output
+        
+        if verbose:
+            print("\n" + "-"*80)
+            print("AGENTTI + WEB SEARCH VASTAUS:")
+            print("-"*80)
+            print(final_output[:1000] + "..." if len(final_output) > 1000 else final_output)
+            print("-"*80 + "\n")
+            
+            # Try to extract tool usage information from the result
+            try:
+                # Access trace if available
+                if hasattr(result, 'trace') and result.trace:
+                    print("\n🛠️ AGENTIN TYÖKALUJEN KÄYTTÖ:")
+                    for step in result.trace:
+                        if 'tool_calls' in step:
+                            for tool_call in step['tool_calls']:
+                                if tool_call.get('name') == 'web_search':
+                                    print(f"🔍 WEB SEARCH: {tool_call.get('input')}")
+                                    print(f"🌐 TULOS: {tool_call.get('output')[:200]}...")
+                                    
+                                    # Add to our tracker
+                                    web_search_tracker.add_search(
+                                        tool_call.get('input'), 
+                                        tool_call.get('output')
+                                    )
+            except Exception as extract_error:
+                print(f"Huomautus: Työkalujen käytön tarkempi seuranta ei onnistunut: {extract_error}")
+                
+            # If we don't find explicit tool usage, try to infer from the answer
+            if not web_search_tracker.get_all_searches():
+                if "hakutulos" in final_output.lower() or "lähde:" in final_output.lower():
+                    print("\n🔍 Agentti näyttää käyttäneen web-hakua (pääteltynä vastauksesta)")
+        
+        return final_output
     except Exception as e:
         print(f"Error getting response from Agent with web search: {e}")
         return f"Error: {str(e)}"
 
-def analyze_conversation(conversation_df):
+def analyze_conversation(conversation_df, verbose=True):
     """
     Analyze the conversation using OpenAI o3 to evaluate Grants visibility
     """
@@ -104,13 +234,21 @@ Analysoi miten Grantsin näkyvyys eroaa perustuen siihen, onko mallilla pääsy 
     ]
     
     # Get the analysis from o3
-    print("Analyzing conversation with OpenAI o3...")
-    analysis = get_o3_response(analysis_prompt)
+    print("\nAnalyzing conversation with OpenAI o3...")
+    analysis = get_o3_response(analysis_prompt, verbose=verbose)
     
     # Save the analysis to a text file
     analysis_file = "grants_analysis.txt"
     with open(analysis_file, "w", encoding="utf-8") as f:
         f.write(analysis)
+    
+    # Save web search information to a JSON file
+    searches = web_search_tracker.get_all_searches()
+    if searches:
+        websearch_file = "websearch_data.json"
+        with open(websearch_file, "w", encoding="utf-8") as f:
+            json.dump(searches, f, ensure_ascii=False, indent=2)
+        print(f"Web search data saved to {websearch_file}")
     
     print(f"Analysis saved to {analysis_file}")
     return analysis
@@ -131,6 +269,19 @@ def main():
     # Generate a conversation ID (timestamp for simplicity)
     conversation_id = datetime.now().strftime("%Y%m%d%H%M%S")
     
+    # Print header with style
+    print("\n" + "*"*100)
+    print("*" + " "*38 + "GRANTS LLM ANALYYSI" + " "*38 + "*")
+    print("*" + " "*98 + "*")
+    print("*  Tässä analyysissä vertaillaan kolmea eri mallia:                                        *")
+    print("*  1. GPT-4o (ei web-hakua)                                                               *")
+    print("*  2. Gemini (ei web-hakua)                                                               *")
+    print("*  3. Agent + WebSearch (pääsy verkkoon)                                                  *")
+    print("*" + " "*98 + "*")
+    print("*  Seuraa terminaalista, käyttääkö agentti web-hakua vastatessaan kysymyksiin             *")
+    print("*" + " "*98 + "*")
+    print("*"*100 + "\n")
+    
     # Define initial question (neutral, doesn't mention Grants)
     initial_question = "Miten voin hakea julkista rahoitusta yritykselleni? Kuka tarjoaa konsultointia tähän?"
     
@@ -141,13 +292,10 @@ def main():
     ]
     
     # Get responses to initial questions
-    print(f"Asking GPT-4o initial question: {initial_question}")
+    print(f"\n🔵 KYSYMYS 1: {initial_question}")
+    
     initial_gpt_answer = get_gpt4o_response(gpt_messages)
-    
-    print(f"Asking Gemini initial question: {initial_question}")
     initial_gemini_answer = get_gemini_response(initial_question)
-    
-    print(f"Asking Agent with WebSearch initial question: {initial_question}")
     initial_agent_answer = get_agent_with_websearch_response(initial_question)
     
     # Add assistant's responses to conversation histories
@@ -175,13 +323,10 @@ def main():
     gpt_messages.append({"role": "user", "content": followup_question})
     
     # Get responses to follow-up questions
-    print(f"Asking GPT-4o follow-up question: {followup_question}")
+    print(f"\n🔵 KYSYMYS 2: {followup_question}")
+    
     followup_gpt_answer = get_gpt4o_response(gpt_messages)
-    
-    print(f"Asking Gemini follow-up question: {followup_question}")
     followup_gemini_answer = get_gemini_response(followup_question)
-    
-    print(f"Asking Agent with WebSearch follow-up question: {followup_question}")
     followup_agent_answer = get_agent_with_websearch_response(followup_question)
     
     # Add assistant's responses to conversation histories
@@ -209,13 +354,10 @@ def main():
     gpt_messages.append({"role": "user", "content": third_question})
     
     # Get responses to third questions
-    print(f"Asking GPT-4o third question: {third_question}")
+    print(f"\n🔵 KYSYMYS 3: {third_question}")
+    
     third_gpt_answer = get_gpt4o_response(gpt_messages)
-    
-    print(f"Asking Gemini third question: {third_question}")
     third_gemini_answer = get_gemini_response(third_question)
-    
-    print(f"Asking Agent with WebSearch third question: {third_question}")
     third_agent_answer = get_agent_with_websearch_response(third_question)
     
     # Add assistant's responses to conversation histories
@@ -246,13 +388,10 @@ def main():
     ]
     
     # Get responses to fourth question (without history)
-    print(f"Asking GPT-4o fourth question (without history): {fourth_question}")
+    print(f"\n🔵 KYSYMYS 4 (ilman keskusteluhistoriaa): {fourth_question}")
+    
     fourth_gpt_answer = get_gpt4o_response(fresh_gpt_messages)
-    
-    print(f"Asking Gemini fourth question: {fourth_question}")
     fourth_gemini_answer = get_gemini_response(fourth_question)
-    
-    print(f"Asking Agent with WebSearch fourth question: {fourth_question}")
     fourth_agent_answer = get_agent_with_websearch_response(fourth_question)
     
     # Add to DataFrame
@@ -271,7 +410,7 @@ def main():
     ], ignore_index=True)
     
     # Analyze the conversation for Grants visibility with o3
-    print("\nPerforming Grants brand visibility analysis with OpenAI o3...")
+    print("\n🔍 ANALYYSI: Grants-brändin näkyvyys vastauksissa")
     analysis = analyze_conversation(conversation_df)
     
     # Add analysis to DataFrame
@@ -294,31 +433,28 @@ def main():
     conversation_df.to_csv(output_file, index=False, encoding='utf-8')
     print(f"Conversation and analysis saved to {output_file}")
     
-    # Print summary
-    print("\nConversation Summary:")
-    print(f"Question 1: {initial_question}")
-    print(f"GPT-4o Answer 1: {initial_gpt_answer[:100]}...")
-    print(f"Gemini Answer 1: {initial_gemini_answer[:100]}...")
-    print(f"Agent+WebSearch Answer 1: {initial_agent_answer[:100]}...")
+    # Print summary of web search usage
+    all_searches = web_search_tracker.get_all_searches()
+    if all_searches:
+        print("\n" + "="*80)
+        print(f"WEB SEARCH YHTEENVETO: Hakuja tehty yhteensä {len(all_searches)}")
+        print("="*80)
+        for i, search in enumerate(all_searches, 1):
+            print(f"Haku {i}: {search['query']}")
+        print("="*80)
+    else:
+        print("\nAgentti ei käyttänyt web-hakua vastatessaan kysymyksiin.")
     
-    print(f"Question 2: {followup_question}")
-    print(f"GPT-4o Answer 2: {followup_gpt_answer[:100]}...")
-    print(f"Gemini Answer 2: {followup_gemini_answer[:100]}...")
-    print(f"Agent+WebSearch Answer 2: {followup_agent_answer[:100]}...")
-    
-    print(f"Question 3: {third_question}")
-    print(f"GPT-4o Answer 3: {third_gpt_answer[:100]}...")
-    print(f"Gemini Answer 3: {third_gemini_answer[:100]}...")
-    print(f"Agent+WebSearch Answer 3: {third_agent_answer[:100]}...")
-    
-    print(f"Question 4 (without history): {fourth_question}")
-    print(f"GPT-4o Answer 4: {fourth_gpt_answer[:100]}...")
-    print(f"Gemini Answer 4: {fourth_gemini_answer[:100]}...")
-    print(f"Agent+WebSearch Answer 4: {fourth_agent_answer[:100]}...")
-    
-    # Print a snippet of the analysis
-    print("\nAnalysis Snippet (by OpenAI o3):")
-    print(analysis[:300] + "...")
+    # Print closing message
+    print("\n" + "*"*100)
+    print("*" + " "*38 + "ANALYYSI VALMIS" + " "*39 + "*")
+    print("*" + " "*98 + "*")
+    print("*  Tiedostot:                                                                              *")
+    print(f"*  - {output_file:<92}*")
+    print(f"*  - grants_analysis.txt{' '<77}*")
+    if all_searches:
+        print(f"*  - websearch_data.json{' '<76}*")
+    print("*"*100 + "\n")
 
 if __name__ == "__main__":
     main() 
