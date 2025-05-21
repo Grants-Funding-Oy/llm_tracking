@@ -62,7 +62,8 @@ def main():
         'QuestionNumber', 
         'Question', 
         'Answer', 
-        'Timestamp'
+        'Timestamp',
+        'Type'
     ])
     
     # Generate a conversation ID (timestamp for simplicity)
@@ -92,7 +93,8 @@ def main():
             'QuestionNumber': 1,
             'Question': initial_question,
             'Answer': initial_answer,
-            'Timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            'Timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            'Type': 'question'
         }])
     ], ignore_index=True)
     
@@ -117,14 +119,32 @@ def main():
             'QuestionNumber': 2,
             'Question': followup_question,
             'Answer': followup_answer,
-            'Timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            'Timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            'Type': 'question'
+        }])
+    ], ignore_index=True)
+    
+    # Analyze the conversation for iLoq visibility
+    print("\nPerforming iLoq brand visibility analysis...")
+    analysis = analyze_conversation(conversation_df)
+    
+    # Add analysis to DataFrame
+    conversation_df = pd.concat([
+        conversation_df,
+        pd.DataFrame([{
+            'ConversationID': conversation_id,
+            'QuestionNumber': 3,
+            'Question': "Brändianalyysi: iLoq-brändin näkyvyys vastauksissa",
+            'Answer': analysis,
+            'Timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            'Type': 'analysis'
         }])
     ], ignore_index=True)
     
     # Save to CSV
     output_file = "company_mentions.csv"
     conversation_df.to_csv(output_file, index=False, encoding='utf-8')
-    print(f"Conversation saved to {output_file}")
+    print(f"Conversation and analysis saved to {output_file}")
     
     # Print summary
     print("\nConversation Summary:")
@@ -132,10 +152,6 @@ def main():
     print(f"Answer 1: {initial_answer[:100]}...")
     print(f"Question 2: {followup_question}")
     print(f"Answer 2: {followup_answer[:100]}...")
-    
-    # Analyze the conversation for iLoq visibility
-    print("\nPerforming iLoq brand visibility analysis...")
-    analysis = analyze_conversation(conversation_df)
     
     # Print a snippet of the analysis
     print("\nAnalysis Snippet:")

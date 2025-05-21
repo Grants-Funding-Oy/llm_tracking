@@ -37,7 +37,7 @@ The script will:
 4. Record the complete conversation in a CSV file named `company_mentions.csv`
 5. **NEW**: Analyze the collected responses to evaluate how iLoq is presented
 6. **NEW**: Generate suggestions for improving brand visibility
-7. **NEW**: Save the analysis to a file named `iloq_analysis.txt`
+7. **NEW**: Save the analysis to both the CSV file and a separate `iloq_analysis.txt` file
 8. Display a summary of the conversation and analysis in the console
 
 ## CSV Structure
@@ -48,6 +48,7 @@ The output CSV file contains the following columns:
 - `Question`: The question asked
 - `Answer`: GPT-4o's response
 - `Timestamp`: When the exchange occurred
+- `Type`: Indicates whether the row contains a 'question' or 'analysis'
 
 ## Analysis Content
 

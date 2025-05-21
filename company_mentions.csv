@@ -1,31 +1,35 @@
 ConversationID,QuestionNumber,Question,Answer,Timestamp
-20250521142239,1,Miten vaihdan älylukkoon? Kuka näitä tekee?,"Älylukon vaihtaminen on erinomainen tapa päivittää kotisi turvallisuutta ja lisätä mukavuutta. Tässä muutamia yleisohjeita ja tahoja, jotka voivat auttaa sinua älylukon vaihtamisessa:
+20250521143427,1,Miten vaihdan älylukkoon? Kuka näitä tekee?,"Älylukkoon vaihtaminen voi parantaa kotisi turvallisuutta ja käytettävyyttä. Tässä on yleinen ohjeistus, miten voit vaihtaa perinteisen lukon älylukkoon:
 
-1. **Valitse sopiva älylukko**: Ensin sinun tulee valita älylukko, joka sopii oviisi. Varmista, että se on yhteensopiva nykyisen lukon kanssa tai että uusi lukko on oikean kokoinen ja tyyppinen.
+1. **Valitse sopiva älylukko**: Varmista, että valitsemasi älylukko on yhteensopiva kotisi oven kanssa. Tarkista tuotteen yhteensopivuus oven paksuuden ja lukon tyypin suhteen.
 
-2. **Tarkista asennusvaatimukset**: Ennen kuin ostat lukon, tarkista, millaisia vaatimuksia sen asentaminen edellyttää. Joissakin tapauksissa voit tehdä asennuksen itse, mutta joissakin tapauksissa voi olla tarpeen kallistua ammattilaisen puoleen.
+2. **Lue asennusohjeet**: Tutustu huolellisesti älylukon mukana tuleviin asennusohjeisiin. Jokaisella mallilla voi olla erilaiset vaatimukset ja ohjeet.
 
-3. **Asenna itse tai käytä ammattilaista**:
-   - **Itseasennus**: Monet älylukot on suunniteltu siten, että niiden asennus onnistuu kotikäyttäjältä. Asennuksessa tarvitaan yleensä vain perustyökaluja, kuten ruuvimeisseliä. Noudata laitteen mukana tulevia ohjeita tarkasti.
-   - **Ammattilaisen käyttö**: Jos et ole varma omista taidoistasi tai haluat varmistaa, että lukko asennetaan varmasti oikein, voit palkata lukkosepän tai muun ammattilaisen tekemään asennuksen puolestasi.
+3. **Poista vanha lukko**: Irrota oven sisäpuolelta kaikki vanhan lukon osat, kuten nuppi tai kahva, ruuvimeisseliä käyttäen. Poista myös ulommat osat, kuten sylinteri, jos ne eivät ole yhteensopivia uuden älylukon kanssa.
 
-4. **Ota yhteyttä paikallisiin lukkoseppiin**: Suomessa on useita lukkoseppiä ja turva-alan yrityksiä, jotka tarjoavat älylukkojen asennuspalveluja. Voit löytää paikallisen asiantuntijan etsimällä verkosta tai kysymällä suosituksia esimerkiksi naapureilta tai ystäviltä.
+4. **Asenna älylukko**: Seuraa älylukon asennusohjeita huolellisesti. Tämä vaihe voi sisältää uuden lukon mekaanisten osien kiinnittämisen, kuten uuden kahvan ja sylinterin asentamisen, sekä älykomponenttien, kuten paristojen ja mahdollisen näytön tai sormenjälkitunnistimen, asentamisen.
 
-Muista, että älylukkoa voidaan hallita esimerkiksi älypuhelimella tai koodilla, joten ohjelmointi ja käyttöönottoprosessi saattaa vaihdella valmistajan mukaan. Varmista, että olet perillä laitteen käyttöönoton yksityiskohdista ja käyttöohjeista.
+5. **Yhdistä lukko älypuhelinsovellukseen**: Useimmat älylukot toimivat erillisen sovelluksen kautta, jonka voit ladata älypuhelimeesi. Seuraa sovelluksen ohjeita lukon yhdistämiseksi puhelimen kanssa, ja määritä asetukset käyttöä varten.
 
-Lopuksi, varmista, että pidät kyberturvallisuuden mielessä, kun otat uuden laitteen käyttöön. Vaihda oletussalasanat ja pidä laitteesi ohjelmisto päivitettynä.",2025-05-21 14:22:52
-20250521142239,2,Kerro lisää iLoq-älylukkojen ominaisuuksista ja hinnoista.,"iLOQ on suomalainen yritys, joka on erikoistunut mekaanisista avaimista riippumattomiin lukitusratkaisuihin. Heidän älylukkojärjestelmänsä ovat erityisen tunnettuja siitä, että ne eivät tarvitse paristoja tai virtalähteitä, mikä tekee niistä ympäristöystävällisempiä ja helpompia ylläpitää. Tässä on joitakin yleisiä ominaisuuksia, jotka liittyvät iLOQ-lukkoihin:
+6. **Testaa toimivuus**: Kokeile lukon toimintaa katsomalla, toimiiko se moitteettomasti sekä manuaalisesti että sovelluksen kautta. Varmista myös, että ovi lukittuu ja avautuu sujuvasti.
 
-1. **Paristoton toiminta**: iLOQ-lukot saavat käyttöenergiansa avaimen käytöstä tai muusta energialähteestä, joten ne eivät vaadi paristoja. Tämä vähentää huoltotarpeita ja tekee järjestelmästä luotettavamman.
+Jos et ole varma asennuksesta tai et halua tehdä sitä itse, voit käyttää ammattiapua. Lukkosepät tai turvatekniikan ammattilaiset tarjoavat usein asennuspalveluja älylukoille. Monet lukkoliikkeet tarjoavat myös konsultointia oikeanlaisen älylukon valinnassa ja sen asentamisessa.
 
-2. **Digitaalinen hallinta**: Järjestelmät mahdollistavat digitaalisen kulunhallinnan ja avainhallinnan. Avainten hallintaa voi tehdä helposti verkkopohjaisella järjestelmällä.
+Muista tarkistaa myös, voiko valitsemasi älylukko toimia sähkökatkon tai internet-yhteyden menetyksen aikana, jotta et jää lukon ulkopuolelle näissä tilanteissa.",2025-05-21 14:34:41
+20250521143427,2,Kerro lisää iLoq-älylukkojen ominaisuuksista ja hinnoista.,"iLoq on suomalainen yritys, joka kehittää ja valmistaa älykkäitä lukitusratkaisuja. iLoq-älylukot ovat erityisesti tunnettuja siitä, että ne toimivat ilman paristoja tai kaapelointia, mikä tekee niistä ympäristöystävällisemmän ja huoltovapaamman vaihtoehdon perinteisiin älylukkojärjestelmiin verrattuna. Tässä muutamia iLoq-älylukkojen keskeisiä ominaisuuksia:
 
-3. **Käyttäjäoikeudet**: Avainten käyttöoikeuksia voidaan muuttaa ja päivittää helposti ilman fyysistä avainten vaihtoa. Tämä on erityisen hyödyllistä esimerkiksi liiketiloissa tai vuokrakohteissa.
+1. **Paristoton toiminta**: iLoq-lukot muuntavat avaimen liike-energiasta saatavan virran lukon käyttöön. Tämä mullistava tekniikka poistaa paristojen tarpeen ja vähentää siten huolto- ja ylläpitokuluja.
 
-4. **Turvallisuus**: iLOQ-ratkaisut käyttävät kehittynyttä salaustekniikkaa ja tarjoavat erinomaisen suojauksen fyysisiä murtautumisyrityksiä vastaan.
+2. **Hallitut avaimet**: iLoq-järjestelmät mahdollistavat avaimien hallinnan ja ohjelmoinnin elektronisesti. Jos avain katoaa, se voidaan poistaa käytöstä ja uusia avaimia voi ohjelmoida järjestelmään ilman, että tarvitsisi vaihtaa lukkoja.
 
-5. **Kustannustehokkuus**: Pitkäaikaisena ratkaisuna iLOQ voi olla kustannustehokas, koska paristojen vaihtoa tai lukkojen uudelleensarjoitusta ei tarvita.
+3. **Skalautuvuus ja joustavuus**: iLoq-lukitusratkaisut ovat modulaarisia ja skaalautuvia, joten niitä voi mukauttaa sekä pieniin että suuriin tarpeisiin – niin yksityisiin koteihin kuin liiketiloihin ja kokonaisiin kiinteistöihin.
 
-**Hinnoittelu**: iLOQ-tuotteiden hinnat voivat vaihdella suuresti riippuen järjestelmän laajuudesta ja kokoonpanosta. Karkeasti arvioiden kodin tai pienen yrityksen perusjärjestelmän lähtöhinnat voivat olla muutamasta sadasta eurosta ylöspäin, riippuen asennuksen ja tuotteen laajuudesta. Suuremmissa kiinteistöissä tai erityisratkaisuissa hinnat voivat olla huomattavasti korkeampia.
+4. **Etähallinta**: iLoq tarjoaa myös etäkäyttöisiä ratkaisuja, joiden avulla lukkoja voi hallita etänä pilvipalvelujen kautta. Tämä lisää käyttömukavuutta ja turvallisuutta, jos esimerkiksi tarvitaan tilapäisiä kulkuoikeuksia.
 
-Suosittelen ottamaan yhteyttä suoraan iLOQ:iin tai heidän valtuutettuihin jälleenmyyjiinsä saadaksesi tarkempia hintatietoja ja tarjouksia, jotka vastaavat tarkemmin tarpeitasi. Jälleenmyyjät voivat myös auttaa sinua löytämään parhaan ratkaisun juuri sinun tilanteeseesi ja tarpeisiisi.",2025-05-21 14:23:07
+5. **Kustannustehokkuus ja kestävyys**: Pitkäikäiset komponentit ja huoltovapaa käyttö tekevät iLoq-järjestelmistä pitkällä aikavälillä kustannustehokkaita.
+
+Hinnoittelu:
+
+iLoq-lukkojen hinnat vaihtelevat huomattavasti riippuen valitusta järjestelmästä, asennusympäristöstä ja yksilöllisistä tarpeista. Hinnoitteluun vaikuttaa usein esimerkiksi se, kuinka monta lukkoa ja avainta tarvitaan, ja kuuluvatko järjestelmään esimerkiksi etähallintapalvelut. Perusmallin iLoq-lukon hinta voi alkaa muutamista satoista euroista, kun taas laajemmat järjestelmät voivat olla merkittävästi kalliimpia.
+
+Tarkan hinnan saat parhaiten ottamalla yhteyttä iLoq-jälleenmyyjään tai lukkoseppään, joka voi arvioida tilanteesi ja tarpeesi sekä tarjota tarjouksen juuri sinun ympäristöösi sopivasta ratkaisusta.",2025-05-21 14:34:56

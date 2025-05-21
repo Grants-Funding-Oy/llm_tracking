@@ -29,6 +29,7 @@ Olemme nyt toteuttaneet seuraavat parannukset:
      * Question (kysymyksen sisältö)
      * Answer (GPT-4o:n vastaus)
      * Timestamp (aikaleima)
+     * Type (rivin tyyppi: 'question' tai 'analysis')
 
 4. **Edut**
    - Keskustelukontekstin säilyminen tuottaa relevantimpia vastauksia
@@ -48,13 +49,15 @@ Olemme lisänneet skriptiin brändianalyysivaiheen, joka:
    - Ehdottaa tapoja parantaa brändin näkyvyyttä kielimallien vastauksissa
    - Tuottaa 5 kysymystä, joilla käyttäjät todennäköisesti hakevat tietoa aiheesta
 
-3. **Tallentaa analyysin tiedostoon**
+3. **Tallentaa analyysin**
    - Tallentaa analyysin erilliseen tekstitiedostoon (iloq_analysis.txt)
+   - Tallentaa analyysin myös CSV-tiedostoon osana keskusteluhistoriaa
    - Näyttää analyysin tiivistelmän konsolissa
 
 4. **Jatkokäyttö**
    - Analyysin tuloksia voidaan käyttää markkinointistrategian kehittämiseen
    - Tunnistaa mahdolliset puutteet tai virheet bränditiedoissa, joita kielimallit käyttävät
+   - Analyysin sisällyttäminen CSV-tiedostoon mahdollistaa sen käsittelyn osana muuta dataa
 
 ## Jatkokehityksen suunta
 
