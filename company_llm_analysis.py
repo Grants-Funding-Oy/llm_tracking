@@ -137,7 +137,7 @@ def main():
     ], ignore_index=True)
     
     # Define follow-up question
-    followup_question = "Kerro lisää iLoq-älylukkojen ominaisuuksista ja hinnoista."
+    followup_question = "Kerro lisää älylukkojen ominaisuuksista ja hinnoista. Kuka tekee parhaat lukot?"
     
     # Add follow-up question to conversation history
     gpt_messages.append({"role": "user", "content": followup_question})
