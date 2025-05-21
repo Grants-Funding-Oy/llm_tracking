@@ -451,9 +451,9 @@ def main():
     print("*" + " "*98 + "*")
     print("*  Tiedostot:                                                                              *")
     print(f"*  - {output_file:<92}*")
-    print(f"*  - grants_analysis.txt{' '<77}*")
+    print(f"*  - grants_analysis.txt{' '*77}*")
     if all_searches:
-        print(f"*  - websearch_data.json{' '<76}*")
+        print(f"*  - websearch_data.json{' '*76}*")
     print("*"*100 + "\n")
 
 if __name__ == "__main__":
