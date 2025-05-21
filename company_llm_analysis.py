@@ -25,6 +25,36 @@ def get_gpt4o_response(messages):
         print(f"Error getting response from OpenAI: {e}")
         return f"Error: {str(e)}"
 
+def analyze_conversation(conversation_df):
+    """
+    Analyze the conversation using GPT-4o to evaluate iLoq's visibility
+    """
+    # Prepare the conversation data as a formatted string
+    conversation_str = ""
+    for _, row in conversation_df.iterrows():
+        conversation_str += f"Kysymys {row['QuestionNumber']}: {row['Question']}\n"
+        conversation_str += f"Vastaus {row['QuestionNumber']}: {row['Answer']}\n\n"
+    
+    # Create the prompt for analysis
+    analysis_prompt = [
+        {"role": "system", "content": "You are an expert in brand analysis and marketing."},
+        {"role": "user", "content": f"""Ohessa on käyttäjän kielimallille esittämät kysymykset ja kielimallin antamat vastaukset. Arvioi miten hyvin iloq näkyy vastauksissa ja miten kielimalli esittää iLoqin. Lopuksi ehdota miten näkyvyyttä kielimallien osalta voisi kehittää ja 5 kysymystä, joilla käyttäjä ehkä hakee tietoa aiheesta.
+
+{conversation_str}"""}
+    ]
+    
+    # Get the analysis from GPT-4o
+    print("Analyzing conversation for iLoq visibility...")
+    analysis = get_gpt4o_response(analysis_prompt)
+    
+    # Save the analysis to a text file
+    analysis_file = "iloq_analysis.txt"
+    with open(analysis_file, "w", encoding="utf-8") as f:
+        f.write(analysis)
+    
+    print(f"Analysis saved to {analysis_file}")
+    return analysis
+
 def main():
     # Initialize conversation DataFrame
     conversation_df = pd.DataFrame(columns=[
@@ -102,6 +132,14 @@ def main():
     print(f"Answer 1: {initial_answer[:100]}...")
     print(f"Question 2: {followup_question}")
     print(f"Answer 2: {followup_answer[:100]}...")
+    
+    # Analyze the conversation for iLoq visibility
+    print("\nPerforming iLoq brand visibility analysis...")
+    analysis = analyze_conversation(conversation_df)
+    
+    # Print a snippet of the analysis
+    print("\nAnalysis Snippet:")
+    print(analysis[:300] + "...")
 
 if __name__ == "__main__":
     main() 

@@ -35,6 +35,27 @@ Olemme nyt toteuttaneet seuraavat parannukset:
    - Aikaleiman ja keskustelutunnisteen avulla voidaan myöhemmin vertailla eri keskusteluja
    - pandas-kirjaston avulla on helppo tehdä jatkoanalyysia datasta
 
+## Automaattinen brändianalyysi
+
+Olemme lisänneet skriptiin brändianalyysivaiheen, joka:
+
+1. **Analysoi iLoq-brändin näkyvyyttä LLM-vastauksissa**
+   - Käyttää GPT-4o-mallia analysoimaan kerätyt vastaukset
+   - Arvioi miten hyvin iLoq näkyy vastauksissa
+   - Arvioi miten kielimalli esittää iLoqin
+
+2. **Tuottaa kehitysehdotuksia**
+   - Ehdottaa tapoja parantaa brändin näkyvyyttä kielimallien vastauksissa
+   - Tuottaa 5 kysymystä, joilla käyttäjät todennäköisesti hakevat tietoa aiheesta
+
+3. **Tallentaa analyysin tiedostoon**
+   - Tallentaa analyysin erilliseen tekstitiedostoon (iloq_analysis.txt)
+   - Näyttää analyysin tiivistelmän konsolissa
+
+4. **Jatkokäyttö**
+   - Analyysin tuloksia voidaan käyttää markkinointistrategian kehittämiseen
+   - Tunnistaa mahdolliset puutteet tai virheet bränditiedoissa, joita kielimallit käyttävät
+
 ## Jatkokehityksen suunta
 
 1. **Dynaamisten jatkokysymysten luonti**
