@@ -9,7 +9,7 @@ This script analyzes how companies are mentioned in LLM responses, particularly 
 - Follows up with specific questions about iLoq smart locks
 - Records complete conversations with timestamps in CSV format
 - Uses pandas DataFrame for flexible data handling and analysis
-- Automatically analyzes brand visibility in LLM responses
+- Automatically analyzes brand visibility using OpenAI's advanced o3 reasoning model
 - Compares how different LLMs (OpenAI vs Google) present company information
 
 ## Setup
@@ -37,7 +37,7 @@ The script will:
 2. Ask the same follow-up question about iLoq smart locks to both models
 3. Maintain conversation context between questions for GPT-4o
 4. Record the complete conversation in a CSV file named `company_mentions.csv`
-5. Analyze the collected responses to evaluate how iLoq is presented in both models
+5. Use OpenAI's o3 model to perform an in-depth analysis of how iLoq is presented in the responses
 6. Compare the differences between GPT-4o and Gemini in representing iLoq
 7. Generate suggestions for improving brand visibility
 8. Save the analysis to both the CSV file and a separate `iloq_analysis.txt` file
@@ -56,7 +56,7 @@ The output CSV file contains the following columns:
 
 ## Analysis Content
 
-The brand visibility analysis evaluates:
+The brand visibility analysis by OpenAI o3 evaluates:
 - How well iLoq appears in both language models' responses
 - How each model presents iLoq's products and brand
 - The differences between how OpenAI and Google models represent the company

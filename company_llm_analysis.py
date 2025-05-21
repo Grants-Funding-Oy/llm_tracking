@@ -29,6 +29,20 @@ def get_gpt4o_response(messages):
         print(f"Error getting response from OpenAI: {e}")
         return f"Error: {str(e)}"
 
+def get_o3_response(messages):
+    """
+    Get a response from OpenAI o3 model
+    """
+    try:
+        response = openai.chat.completions.create(
+            model="o3",
+            messages=messages
+        )
+        return response.choices[0].message.content
+    except Exception as e:
+        print(f"Error getting response from OpenAI o3: {e}")
+        return f"Error: {str(e)}"
+
 def get_gemini_response(prompt):
     """
     Get a response from Gemini 2.0 Flash Lite
@@ -43,14 +57,15 @@ def get_gemini_response(prompt):
 
 def analyze_conversation(conversation_df):
     """
-    Analyze the conversation using GPT-4o to evaluate iLoq's visibility
+    Analyze the conversation using OpenAI o3 to evaluate iLoq's visibility
     """
     # Prepare the conversation data as a formatted string
     conversation_str = ""
     for _, row in conversation_df.iterrows():
-        conversation_str += f"Kysymys {row['QuestionNumber']}: {row['Question']}\n"
-        conversation_str += f"Vastaus {row['QuestionNumber']} (GPT-4o): {row['GPT4o_Answer']}\n"
-        conversation_str += f"Vastaus {row['QuestionNumber']} (Gemini): {row['Gemini_Answer']}\n\n"
+        if row['Type'] == 'question':  # Only include question rows in the analysis
+            conversation_str += f"Kysymys {row['QuestionNumber']}: {row['Question']}\n"
+            conversation_str += f"Vastaus {row['QuestionNumber']} (GPT-4o): {row['GPT4o_Answer']}\n"
+            conversation_str += f"Vastaus {row['QuestionNumber']} (Gemini): {row['Gemini_Answer']}\n\n"
     
     # Create the prompt for analysis
     analysis_prompt = [
@@ -60,9 +75,9 @@ def analyze_conversation(conversation_df):
 {conversation_str}"""}
     ]
     
-    # Get the analysis from GPT-4o
-    print("Analyzing conversation for iLoq visibility...")
-    analysis = get_gpt4o_response(analysis_prompt)
+    # Get the analysis from o3
+    print("Analyzing conversation with OpenAI o3...")
+    analysis = get_o3_response(analysis_prompt)
     
     # Save the analysis to a text file
     analysis_file = "iloq_analysis.txt"
@@ -152,8 +167,8 @@ def main():
         }])
     ], ignore_index=True)
     
-    # Analyze the conversation for iLoq visibility
-    print("\nPerforming iLoq brand visibility analysis...")
+    # Analyze the conversation for iLoq visibility with o3
+    print("\nPerforming iLoq brand visibility analysis with OpenAI o3...")
     analysis = analyze_conversation(conversation_df)
     
     # Add analysis to DataFrame
@@ -164,7 +179,7 @@ def main():
             'QuestionNumber': 3,
             'Question': "Brändianalyysi: iLoq-brändin näkyvyys vastauksissa",
             'GPT4o_Answer': analysis,
-            'Gemini_Answer': "Analyysi tehty GPT-4o:lla",
+            'Gemini_Answer': "Analyysi tehty OpenAI o3-mallilla",
             'Timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             'Type': 'analysis'
         }])
@@ -185,7 +200,7 @@ def main():
     print(f"Gemini Answer 2: {followup_gemini_answer[:100]}...")
     
     # Print a snippet of the analysis
-    print("\nAnalysis Snippet:")
+    print("\nAnalysis Snippet (by OpenAI o3):")
     print(analysis[:300] + "...")
 
 if __name__ == "__main__":

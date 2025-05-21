@@ -56,28 +56,30 @@ Olemme lisänneet skriptiin vertailun eri kielimallien välillä:
    - Gemini-mallille lähetetään vain yksittäiset kysymykset (yksinkertaisuuden vuoksi)
    - Mahdollistaa eri API-strategioiden vertailun ja kehittämisen
 
-## Automaattinen brändianalyysi
+## Automaattinen brändianalyysi OpenAI o3:lla
 
-Olemme lisänneet skriptiin brändianalyysivaiheen, joka:
+Olemme lisänneet skriptiin brändianalyysivaiheen, jossa:
 
-1. **Analysoi iLoq-brändin näkyvyyttä LLM-vastauksissa**
-   - Käyttää GPT-4o-mallia analysoimaan kerätyt vastaukset molemmilta malleilta
-   - Arvioi miten hyvin iLoq näkyy vastauksissa
-   - Arvioi miten kielimallit esittävät iLoqin
-   - Vertailee GPT-4o:n ja Geminin eroja yrityksen esittämisessä
+1. **OpenAI o3 -mallin käyttö analyysiin**
+   - Hyödynnetään OpenAI:n edistynyttä o3-mallia, joka on erikoistunut syvälliseen päättelyyn
+   - O3-malli analysoi sekä GPT-4o:n että Geminin vastaukset
+   - Tämä mahdollistaa erittäin laadukkaan ja syvällisen analyysin yritysnäkyvyydestä
 
-2. **Tuottaa kehitysehdotuksia**
-   - Ehdottaa tapoja parantaa brändin näkyvyyttä kielimallien vastauksissa
-   - Tuottaa 5 kysymystä, joilla käyttäjät todennäköisesti hakevat tietoa aiheesta
+2. **Analyysisisältö**
+   - Arvioidaan miten hyvin iLoq näkyy vastauksissa
+   - Arvioidaan miten kielimallit esittävät iLoqin
+   - Vertaillaan GPT-4o:n ja Geminin eroja yrityksen esittämisessä
+   - Ehdotetaan tapoja parantaa brändin näkyvyyttä kielimallien vastauksissa
+   - Tuotetaan 5 kysymystä, joilla käyttäjät todennäköisesti hakevät tietoa aiheesta
 
-3. **Tallentaa analyysin**
-   - Tallentaa analyysin erilliseen tekstitiedostoon (iloq_analysis.txt)
-   - Tallentaa analyysin myös CSV-tiedostoon osana keskusteluhistoriaa
-   - Näyttää analyysin tiivistelmän konsolissa
+3. **Tallentaminen**
+   - Analyysi tallennetaan erilliseen tekstitiedostoon (iloq_analysis.txt)
+   - Analyysi tallennetaan myös CSV-tiedostoon osana keskusteluhistoriaa
+   - Analyysin tiivistelmä näytetään konsolissa
 
 4. **Jatkokäyttö**
    - Analyysin tuloksia voidaan käyttää markkinointistrategian kehittämiseen
-   - Tunnistaa mahdolliset puutteet tai virheet bränditiedoissa, joita kielimallit käyttävät
+   - Tunnistetaan mahdolliset puutteet tai virheet bränditiedoissa, joita kielimallit käyttävät
    - Analyysin sisällyttäminen CSV-tiedostoon mahdollistaa sen käsittelyn osana muuta dataa
 
 ## Jatkokehityksen suunta
