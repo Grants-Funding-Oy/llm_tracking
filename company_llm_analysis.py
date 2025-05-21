@@ -1,6 +1,7 @@
 import os
 import csv
 import openai
+import google.generativeai as genai
 import pandas as pd
 from datetime import datetime
 from dotenv import load_dotenv
@@ -10,6 +11,9 @@ load_dotenv()
 
 # Set up OpenAI API key
 openai.api_key = os.getenv("OPENAI_API_KEY")
+
+# Set up Google Gemini API key
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 def get_gpt4o_response(messages):
     """
@@ -25,6 +29,18 @@ def get_gpt4o_response(messages):
         print(f"Error getting response from OpenAI: {e}")
         return f"Error: {str(e)}"
 
+def get_gemini_response(prompt):
+    """
+    Get a response from Gemini 2.0 Flash Lite
+    """
+    try:
+        model = genai.GenerativeModel('gemini-2.0-flash-lite')
+        response = model.generate_content(prompt)
+        return response.text
+    except Exception as e:
+        print(f"Error getting response from Gemini: {e}")
+        return f"Error: {str(e)}"
+
 def analyze_conversation(conversation_df):
     """
     Analyze the conversation using GPT-4o to evaluate iLoq's visibility
@@ -33,12 +49,13 @@ def analyze_conversation(conversation_df):
     conversation_str = ""
     for _, row in conversation_df.iterrows():
         conversation_str += f"Kysymys {row['QuestionNumber']}: {row['Question']}\n"
-        conversation_str += f"Vastaus {row['QuestionNumber']}: {row['Answer']}\n\n"
+        conversation_str += f"Vastaus {row['QuestionNumber']} (GPT-4o): {row['GPT4o_Answer']}\n"
+        conversation_str += f"Vastaus {row['QuestionNumber']} (Gemini): {row['Gemini_Answer']}\n\n"
     
     # Create the prompt for analysis
     analysis_prompt = [
         {"role": "system", "content": "You are an expert in brand analysis and marketing."},
-        {"role": "user", "content": f"""Ohessa on käyttäjän kielimallille esittämät kysymykset ja kielimallin antamat vastaukset. Arvioi miten hyvin iloq näkyy vastauksissa ja miten kielimalli esittää iLoqin. Lopuksi ehdota miten näkyvyyttä kielimallien osalta voisi kehittää ja 5 kysymystä, joilla käyttäjä ehkä hakee tietoa aiheesta.
+        {"role": "user", "content": f"""Ohessa on käyttäjän kielimallille esittämät kysymykset ja kielimallin antamat vastaukset. Arvioi miten hyvin iloq näkyy vastauksissa ja miten kielimalli esittää iLoqin. Vertaile myös eroja GPT-4o:n ja Geminin vastausten välillä. Lopuksi ehdota miten näkyvyyttä kielimallien osalta voisi kehittää ja 5 kysymystä, joilla käyttäjä ehkä hakee tietoa aiheesta.
 
 {conversation_str}"""}
     ]
@@ -61,7 +78,8 @@ def main():
         'ConversationID', 
         'QuestionNumber', 
         'Question', 
-        'Answer', 
+        'GPT4o_Answer',
+        'Gemini_Answer',
         'Timestamp',
         'Type'
     ])
@@ -73,17 +91,21 @@ def main():
     initial_question = "Miten vaihdan älylukkoon? Kuka näitä tekee?"
     
     # Initialize conversation history for OpenAI API
-    messages = [
+    gpt_messages = [
         {"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": initial_question}
     ]
     
-    # Get response to initial question
-    print(f"Asking initial question: {initial_question}")
-    initial_answer = get_gpt4o_response(messages)
+    # Get response to initial question from GPT-4o
+    print(f"Asking GPT-4o initial question: {initial_question}")
+    initial_gpt_answer = get_gpt4o_response(gpt_messages)
+    
+    # Get response to initial question from Gemini
+    print(f"Asking Gemini initial question: {initial_question}")
+    initial_gemini_answer = get_gemini_response(initial_question)
     
     # Add assistant's response to conversation history
-    messages.append({"role": "assistant", "content": initial_answer})
+    gpt_messages.append({"role": "assistant", "content": initial_gpt_answer})
     
     # Add to DataFrame
     conversation_df = pd.concat([
@@ -92,7 +114,8 @@ def main():
             'ConversationID': conversation_id,
             'QuestionNumber': 1,
             'Question': initial_question,
-            'Answer': initial_answer,
+            'GPT4o_Answer': initial_gpt_answer,
+            'Gemini_Answer': initial_gemini_answer,
             'Timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             'Type': 'question'
         }])
@@ -102,14 +125,18 @@ def main():
     followup_question = "Kerro lisää iLoq-älylukkojen ominaisuuksista ja hinnoista."
     
     # Add follow-up question to conversation history
-    messages.append({"role": "user", "content": followup_question})
+    gpt_messages.append({"role": "user", "content": followup_question})
     
-    # Get response to follow-up question
-    print(f"Asking follow-up question: {followup_question}")
-    followup_answer = get_gpt4o_response(messages)
+    # Get response to follow-up question from GPT-4o
+    print(f"Asking GPT-4o follow-up question: {followup_question}")
+    followup_gpt_answer = get_gpt4o_response(gpt_messages)
+    
+    # Get response to follow-up question from Gemini
+    print(f"Asking Gemini follow-up question: {followup_question}")
+    followup_gemini_answer = get_gemini_response(followup_question)
     
     # Add assistant's response to conversation history
-    messages.append({"role": "assistant", "content": followup_answer})
+    gpt_messages.append({"role": "assistant", "content": followup_gpt_answer})
     
     # Add to DataFrame
     conversation_df = pd.concat([
@@ -118,7 +145,8 @@ def main():
             'ConversationID': conversation_id,
             'QuestionNumber': 2,
             'Question': followup_question,
-            'Answer': followup_answer,
+            'GPT4o_Answer': followup_gpt_answer,
+            'Gemini_Answer': followup_gemini_answer,
             'Timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             'Type': 'question'
         }])
@@ -135,7 +163,8 @@ def main():
             'ConversationID': conversation_id,
             'QuestionNumber': 3,
             'Question': "Brändianalyysi: iLoq-brändin näkyvyys vastauksissa",
-            'Answer': analysis,
+            'GPT4o_Answer': analysis,
+            'Gemini_Answer': "Analyysi tehty GPT-4o:lla",
             'Timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             'Type': 'analysis'
         }])
@@ -149,9 +178,11 @@ def main():
     # Print summary
     print("\nConversation Summary:")
     print(f"Question 1: {initial_question}")
-    print(f"Answer 1: {initial_answer[:100]}...")
+    print(f"GPT-4o Answer 1: {initial_gpt_answer[:100]}...")
+    print(f"Gemini Answer 1: {initial_gemini_answer[:100]}...")
     print(f"Question 2: {followup_question}")
-    print(f"Answer 2: {followup_answer[:100]}...")
+    print(f"GPT-4o Answer 2: {followup_gpt_answer[:100]}...")
+    print(f"Gemini Answer 2: {followup_gemini_answer[:100]}...")
     
     # Print a snippet of the analysis
     print("\nAnalysis Snippet:")

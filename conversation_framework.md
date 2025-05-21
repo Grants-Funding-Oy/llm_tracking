@@ -27,7 +27,8 @@ Olemme nyt toteuttaneet seuraavat parannukset:
      * ConversationID (keskustelun tunniste)
      * QuestionNumber (kysymyksen järjestysnumero keskustelussa)
      * Question (kysymyksen sisältö)
-     * Answer (GPT-4o:n vastaus)
+     * GPT4o_Answer (GPT-4o:n vastaus)
+     * Gemini_Answer (Gemini 2.0 Flash Lite:n vastaus)
      * Timestamp (aikaleima)
      * Type (rivin tyyppi: 'question' tai 'analysis')
 
@@ -36,14 +37,34 @@ Olemme nyt toteuttaneet seuraavat parannukset:
    - Aikaleiman ja keskustelutunnisteen avulla voidaan myöhemmin vertailla eri keskusteluja
    - pandas-kirjaston avulla on helppo tehdä jatkoanalyysia datasta
 
+## LLM-vertailu
+
+Olemme lisänneet skriptiin vertailun eri kielimallien välillä:
+
+1. **Usean LLM-mallin käyttö**
+   - Hyödynnetään sekä OpenAI:n GPT-4o-mallia että Googlen Gemini 2.0 Flash Lite -mallia
+   - Samat kysymykset esitetään molemmille malleille rinnakkain
+   - Mahdollistaa suoran vertailun siitä, miten eri teknologiat esittävät yritystietoja
+
+2. **Vertaileva analyysi**
+   - Analyysivaiheessa vertaillaan mallien vastauksia keskenään
+   - Tunnistetaan eroja brändin esittämisessä eri mallien välillä
+   - Tuottaa syvemmän ymmärryksen eri LLM-mallien käyttäytymisestä
+
+3. **API-toteutuksien erot**
+   - GPT-4o:lle välitetään keskusteluhistoria vastausten kontekstualisoimiseksi
+   - Gemini-mallille lähetetään vain yksittäiset kysymykset (yksinkertaisuuden vuoksi)
+   - Mahdollistaa eri API-strategioiden vertailun ja kehittämisen
+
 ## Automaattinen brändianalyysi
 
 Olemme lisänneet skriptiin brändianalyysivaiheen, joka:
 
 1. **Analysoi iLoq-brändin näkyvyyttä LLM-vastauksissa**
-   - Käyttää GPT-4o-mallia analysoimaan kerätyt vastaukset
+   - Käyttää GPT-4o-mallia analysoimaan kerätyt vastaukset molemmilta malleilta
    - Arvioi miten hyvin iLoq näkyy vastauksissa
-   - Arvioi miten kielimalli esittää iLoqin
+   - Arvioi miten kielimallit esittävät iLoqin
+   - Vertailee GPT-4o:n ja Geminin eroja yrityksen esittämisessä
 
 2. **Tuottaa kehitysehdotuksia**
    - Ehdottaa tapoja parantaa brändin näkyvyyttä kielimallien vastauksissa
@@ -68,9 +89,11 @@ Olemme lisänneet skriptiin brändianalyysivaiheen, joka:
 2. **Useampi keskustelu ja vertailu**
    - Mahdollisuus ajaa useita páralleeleja keskusteluja eri alkaiskysymyksillä
    - Vertailla eri yritysten näkyvyyttä samassa aihepiirissä
+   - Vertailla laajempaa joukkoa kielimalleja (esim. Claude, Llama, jne.)
 
 3. **Analyysityökalut**
    - NLP-työkalut vastausten analysointiin (esim. entiteettien tunnistaminen)
    - Visualisointi yritysten näkyvyydestä eri keskustelujen kontekstissa
+   - Automaattinen raportointi LLM-mallien välisistä eroista yritysmaininnoissa
 
-Tämä lähestymistapa mahdollistaa syvemmän analyysin siitä, miten yritykset esiintyvät LLM-vastauksissa eri keskustelukonteksteissa, ja miten niiden maininnat muuttuvat keskustelun edetessä. 
+Tämä lähestymistapa mahdollistaa syvemmän analyysin siitä, miten yritykset esiintyvät LLM-vastauksissa eri keskustelukonteksteissa, eri kielimallien välillä, ja miten niiden maininnat muuttuvat keskustelun edetessä. 
