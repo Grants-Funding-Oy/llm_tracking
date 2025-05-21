@@ -9,39 +9,44 @@ Olemme luoneet yksinkertaisen Python-skriptin (`company_llm_analysis.py`), joka:
 3. Tallentaa kysymyksen ja vastauksen CSV-tiedostoon myöhempää analyysia varten
 4. Käyttää yksinkertaista rakennetta, jossa jokainen kysymys-vastaus-pari tallennetaan omana rivinään
 
-## Jatkokehityksen suunta: Keskustelurakenne
+## Toteutettu keskustelurakenne
 
-Seuraava kehitysvaihe on rakentaa aito keskustelukokemus, jossa:
+Olemme nyt toteuttaneet seuraavat parannukset:
 
 1. **Keskusteluhistorian hallinta**
    - Käytetään pandas DataFrame -rakennetta tallentamaan keskustelun tila
    - Säilytetään koko viestintähistoria OpenAI API -kutsuissa
 
-2. **Jatkokysymysten lisääminen**
-   - Ensimmäisen vastauksen jälkeen esitetään jatkokysymyksiä
-   - Jatkokysymykset voivat olla joko:
-     * Etukäteen määriteltyjä kysymyksiä, jotka syventävät keskustelua
-     * Dynaamisesti luotuja kysymyksiä perustuen aiempiin vastauksiin
+2. **Jatkokysymys**
+   - Ensimmäisen kysymyksen ("Miten vaihdan älylukkoon? Kuka näitä tekee?") jälkeen esitetään jatkokysymys
+   - Jatkokysymys: "Kerro lisää iLoq-älylukkojen ominaisuuksista ja hinnoista."
+   - API-kutsussa välitetään koko aiempi keskusteluhistoria kontekstin säilyttämiseksi
 
 3. **DataFrame-pohjainen toteutus**
-   - Kaikki keskustelun vaiheet tallennetaan DataFrameen, esim. sarakkeet: 
-     * QuestionsID (keskustelun tunniste)
+   - Kaikki keskustelun vaiheet tallennetaan DataFrameen, sarakkeet: 
+     * ConversationID (keskustelun tunniste)
      * QuestionNumber (kysymyksen järjestysnumero keskustelussa)
      * Question (kysymyksen sisältö)
      * Answer (GPT-4o:n vastaus)
      * Timestamp (aikaleima)
 
 4. **Edut**
-   - Mahdollistaa monimutkaisempien keskustelujen mallintamisen
-   - Helpottaa tiedon jatkokäsittelyä pandas-työkaluilla
-   - Parantaa yritysmainintojen kontekstuaalista analyysia
-   - Mahdollistaa erilaisten keskustelupolkujen vertailun
+   - Keskustelukontekstin säilyminen tuottaa relevantimpia vastauksia
+   - Aikaleiman ja keskustelutunnisteen avulla voidaan myöhemmin vertailla eri keskusteluja
+   - pandas-kirjaston avulla on helppo tehdä jatkoanalyysia datasta
 
-## Käytännön toteutus jatkossa
+## Jatkokehityksen suunta
 
-1. Päivitetään skripti käyttämään pandas-kirjastoa
-2. Lisätään logiikka, joka tallentaa keskustelun tilan DataFrameen
-3. Määritellään jatkokysymysten logiikka (esim. "Mitä älylukon vaihtaminen maksaa?" tai "Kertoisitko lisää iLoq-lukkojen ominaisuuksista?")
-4. Parannetaan CSV-tallennusta sisältämään koko keskusteluhistoria
+1. **Dynaamisten jatkokysymysten luonti**
+   - Mahdollisuus luoda jatkokysymyksiä automaattisesti perustuen mallin aiempiin vastauksiin
+   - Voidaan toteuttaa esim. pyytämällä mallia ehdottamaan kysymyksiä, jotka auttavat ymmärtämään paremmin yrityksen brändinäkyvyyttä
+
+2. **Useampi keskustelu ja vertailu**
+   - Mahdollisuus ajaa useita páralleeleja keskusteluja eri alkaiskysymyksillä
+   - Vertailla eri yritysten näkyvyyttä samassa aihepiirissä
+
+3. **Analyysityökalut**
+   - NLP-työkalut vastausten analysointiin (esim. entiteettien tunnistaminen)
+   - Visualisointi yritysten näkyvyydestä eri keskustelujen kontekstissa
 
 Tämä lähestymistapa mahdollistaa syvemmän analyysin siitä, miten yritykset esiintyvät LLM-vastauksissa eri keskustelukonteksteissa, ja miten niiden maininnat muuttuvat keskustelun edetessä. 
