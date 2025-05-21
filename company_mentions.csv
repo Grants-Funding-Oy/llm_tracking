@@ -1,175 +1,311 @@
 ConversationID,QuestionNumber,Question,GPT4o_Answer,Gemini_Answer,Timestamp,Type
-20250521145609,1,Miten vaihdan älylukkoon? Kuka näitä tekee?,"Älylukkoon vaihtaminen voi olla hyvä tapa lisätä kotisi turvallisuutta ja mukavuutta. Tässä on muutamia ohjeita ja vinkkejä liittyen älylukon asentamiseen:
+20250521152121,1,Miten vaihdan älylukkoon? Kuka näitä tekee?,"Älylukon vaihtaminen voi parantaa kodin turvallisuutta ja mukavuutta, mutta prosessi vaatii huolellisuutta. Tässä on yleisohjeita, joiden avulla voit vaihtaa älylukon:
 
-1. **Valitse oikea älylukko**: Ennen kuin teet vaihtoa, sinun tulee päättää, mikä älylukko sopii parhaiten tarpeisiisi. On olemassa erilaisia malleja, jotka käyttävät esimerkiksi Bluetoothia, Wi-Fi-yhteyttä tai Z-Wave-teknologiaa. Ota huomioon lukon yhteensopivuus nykyisen oven kanssa sekä sen tarjoamat ominaisuudet.
+1. **Valitse sopiva älylukko:** Valitse älylukko, joka sopii oviisi ja tarpeisiisi. Varmista, että se on yhteensopiva ovityypin (esim. puu, metalli) ja oven paksuuden kanssa.
 
-2. **Tarkista nykyinen lukko**: Varmista, että nykyinen lukko on yhteensopiva valitsemasi älylukon kanssa. Jotkut älylukot vaativat tietyn tyyppisen olemassa olevan lukkomekanismin.
+2. **Irrota vanha lukko:** Käytä ruuvimeisseliä tai muuta sopivaa työkalua vanhan lukon irrottamiseen. Varmista, että tallennat kaikki osat, jos niitä tarvitaan myöhemmin.
 
-3. **Asenna älylukko**: 
-   - Poista vanha lukko oven sisäpuolelta.
-   - Asenna älylukon uusi lukkoyksikkö ja varmista, että se istuu tukevasti.
-   - Asenna ulkoyksikkö niin, että se on kohdistettu oikein.
-   - Yhdistä tarvittaessa älylukko ohjeiden mukaisesti langattomaan verkkoosi tai pariliitä laite sovelluksen kautta.
+3. **Asenna älylukko:** Noudata älylukon mukana tulevia asennusohjeita. Usein asennus vaatii lukon asettamista paikoilleen, ruuvaamista ja tarvittaessa paristojen asettamista. Joissakin malleissa voi olla myös ohjelmointi- tai paritusvaihe esimerkiksi älypuhelin-sovellukseen.
 
-4. **Ohjelmoi ja testaa lukko**: Suurin osa älylukoista tulee ohjelmoida niiden mukana tulevalla sovelluksella. Tämä voi sisältää käyttäjätilien luomisen, sormenjälkien skannauksen tai PIN-koodien asettamisen.
+4. **Testaa lukko:** Varmistu siitä, että lukko toimii oikein mekanisesti ja että sen älyominaisuudet (esim. etäkäyttö, avaus koodilla tai sovelluksella) ovat toiminnassa.
 
-5. **Tarvittaessa ammattilaisen apu**: Jos et ole varma, kuinka asennus suoritetaan tai mihin lukkomalli soveltuu parhaiten, kannattaa konsultoida ammattilaista. Lukkosepät tai kodin turvallisuusyritykset voivat tarjota asennus- ja neuvontapalveluita.
+Mitä tulee asentajiin, voit tehdä sen itse, jos tunnet olosi mukavaksi käsitellä työkaluja ja noudattaa asennusohjeita. Jos et ole varma, voit palkata ammattilaisen. Useimmat lukkoliikkeet ja turvallisuusyritykset tarjoavat älylukkojen asennuspalveluita. Kannattaa etsiä paikallisia lukkoseppäpalveluita tai kysyä suosituksia tuttavilta. 
 
-Yrityksiä, jotka tarjoavat älylukkopalveluita ja asennusta Suomessa, ovat esimerkiksi:
-- **Lukkosepät**: Perinteiset lukkosepät päivittävät usein tarjontaansa sisältämään myös älykkäät lukitusratkaisut.
-- **Kodin turvallisuuspalveluyritykset**: Monet tarjoavat täyden palvelun paketin, johon sisältyy konsultointi, asennus ja ylläpito.
+Muistathan, että oikean asennuksen lisäksi myös älylukon tietoturvasta on oleellista huolehtia, joten varmista, että lukon ohjelmisto on aina ajan tasalla.","Älylukkoon vaihtaminen riippuu nykyisestä lukostasi ja halutusta älylukosta. Tässä on vaihe vaiheelta ohjeet sekä tietoa asentajista:
 
-Kannattaa myös tarkistaa älylukon valmistajan viralliset jälleenmyyjät ja heidän suosituksensa asennuspalveluista. Näin varmistat, että lukon asennus hoidetaan oikein ja saat tarvittaessa tukea ongelmatilanteissa.","Älylukon vaihtaminen riippuu nykyisestä lukosta ja valitsemastasi älylukosta. Tässä yleisohjeet ja vinkit:
+**Vaihe 1: Valmistelu**
 
-**1. Valmistelut ja valinta:**
-
-*   **Tutki ovesi:**
-    *   **Lukkotyyppi:** Selvitä, onko ovessasi perinteinen avainlukko, vai onko se jokin muu tyyppi. Tämä vaikuttaa siihen, minkälaisen älylukon voit asentaa.
-    *   **Oven paksuus:** Tarkista oven paksuus, sillä älylukot tukevat yleensä tiettyä paksuusaluetta.
-    *   **Avainpesän malli:** Onko avainpesäsi europrofiili, skandinaavinen lukko vai jokin muu?
+*   **Selvitä nykyinen lukko:**
+    *   Minkä tyyppinen lukko sinulla on? (esim. perinteinen sylinterilukko, lukkorunko)
+    *   Minkä kokoinen lukko on? (esim. sylinterin pituus, oven paksuus)
+    *   Onko ovessasi valmiiksi poraus älylukolle?
 *   **Valitse älylukko:**
-    *   **Tutustu eri malleihin:** Älylukkoja on monenlaisia, joissa on erilaisia ominaisuuksia, kuten:
-        *   **Avaimettomat sisäänpääsymenetelmät:** PIN-koodi, sormenjälki, mobiilisovellus, avaimenperät
-        *   **Yhteensopivuus:** Tarkista, onko lukko yhteensopiva älykotijärjestelmäsi kanssa (esim. Apple HomeKit, Google Assistant, Amazon Alexa).
-        *   **Virtalähde:** Paristokäyttöiset, verkkovirtaan liitettävät vai ladattavat akut.
-        *   **Turvallisuusominaisuudet:** Salaus, murtosuojaus, lokitoiminnot.
-    *   **Lue arvosteluja:** Tutki muiden kokemuksia eri älylukkomalleista.
-*   **Hankkiminen:** Osta älylukko luotettavasta lähteestä (rautakaupat, elektroniikkaliikkeet, verkkokaupat).
+    *   Tutki eri älylukkomalleja. Vertaa ominaisuuksia, kuten:
+        *   Lukon tyyppi ja mitat: Varmista, että älylukko sopii oviisi ja nykyiseen lukonreikään.
+        *   Yhteensopivuus: Onko älylukko yhteensopiva älypuhelimesi tai älykotijärjestelmäsi kanssa?
+        *   Toiminnot: Avaus/lukitus puhelimella, sormenjälkitunnistus, PIN-koodi, automaattinen lukitus, pääsynhallinta, lokitiedot.
+        *   Virtalähde: Paristokäyttöinen vai verkkovirtaan kytkettävä.
+        *   Hinta ja arvostelut.
+    *   Suosittuja älylukkomerkkejä: Yale, Abloy, Danalock, Igloohome, Nuki.
+*   **Hanki tarvittavat työkalut:**
+    *   Ruuvimeisselit (eri kokoisia, mahdollisesti tähtipääruuveille)
+    *   Porakone (jos tarvitsee porata uusia reikiä)
+    *   Mittanauha
+    *   Kynä
+    *   Porausterät (jos tarvitsee porata)
+    *   Suojalasit ja mahdollisesti hanskat
 
-**2. Asennus (yleisohjeet):**
+**Vaihe 2: Vanhan lukon irrottaminen**
 
-*   **Lue asennusohjeet huolellisesti:** Jokaisella älylukkomallilla on omat asennusohjeensa. Seuraa niitä tarkasti.
-*   **Poista vanha lukko:**
-    *   Poista vanhan lukon sisä- ja ulkopuoliset osat.
-    *   Irrota avainpesä (sylinteri).
-*   **Asenna uusi älylukko:**
-    *   Asenna uusi avainpesä (jos tarpeen).
-    *   Kiinnitä älylukon sisä- ja ulkopuoliset osat oveen.
-    *   Liitä lukko tarvittaessa sähköisesti (esim. paristot).
-*   **Määritä älylukko:**
-    *   Lataa älylukon sovellus puhelimeesi.
-    *   Seuraa sovelluksen ohjeita lukon määrittämiseksi (esim. WiFi-yhteys, PIN-koodin asetus, käyttäjien lisääminen).
+1.  **Katkaise virta (jos lukko on verkkovirralla):** Varmista, että sähköt ovat poissa.
+2.  **Irrota sisäpuolelta:** Irrota vanhan lukon sisäpuolen osat (esim. kiinnitysruuvit, kahva).
+3.  **Irrota ulkopuolelta:** Irrota lukon ulkopuolinen osa.
+4.  **Irrota lukkorunko (jos tarpeen):** Irrota lukkorunko ja/tai sen kiinnikkeet ovessa.
+5.  **Puhdista:** Puhdista oven lukonreikä ja ympäristö.
 
-**3. Kuka voi asentaa älylukon?**
+**Vaihe 3: Uuden älylukon asentaminen**
 
-*   **Itse:** Monet älylukot on suunniteltu helppoon itse asentamiseen. Jos olet tottunut tekemään pieniä remonttitöitä, voit todennäköisesti asentaa lukon itse.
-*   **Lukkoseppä:** Jos et ole varma itsestäsi, tai jos tarvitset ammattilaisen apua (esim. jos ovi tai lukko vaatii muutostöitä), kannattaa kääntyä lukkosepän puoleen. Lukkoseppä tuntee lukot ja osaa asentaa älylukon ammattimaisesti.
-*   **Rakennusalan ammattilaiset:** Joissain tapauksissa, etenkin jos tarvitaan muutostöitä oveen, rakennusalan ammattilainen voi olla hyvä vaihtoehto.
+1.  **Asenna lukkorunko (jos tarpeen):** Jos älylukko vaatii uuden lukkorungon, asenna se ohjeiden mukaan.
+2.  **Asenna älylukon sisäpuoli:** Aseta älylukon sisäpuoli lukonreikään. Kiinnitä se ohjeiden mukaan, usein ruuveilla.
+3.  **Asenna älylukon ulkopuoli:** Kiinnitä ulkopuolinen osa.
+4.  **Asenna vastarauta:** Varmista, että vastarauta on oikein linjassa lukon kanssa ja asenna se ovikarmiin.
+5.  **Ohjelmoi lukko:** Seuraa älylukon mukana tulleita ohjeita ja yhdistä älylukko älypuhelimeesi tai älykotijärjestelmääsi. Määritä pääsykoodit, käyttäjät ja asetukset.
+6.  **Testaa:** Testaa lukon toimivuus useilla eri tavoilla (puhelimella, PIN-koodilla, avaimella, jne.).
 
-**Mitä huomioida:**
+**Kuka tekee älylukon asennuksia?**
 
-*   **Sähkötyöt:** Jos älylukko vaatii sähköliitäntää, varmista, että osaat tehdä sen turvallisesti tai pyydä ammattilaisen apua.
-*   **Turvallisuus:** Varmista, että valitsemasi älylukko on turvallinen ja noudattaa tarvittavia turvallisuusstandardeja.
-*   **Yhteensopivuus:** Tarkista, että lukko on yhteensopiva oven ja muiden älylaitteidesi kanssa.
-*   **Takuu:** Säilytä ostokuitit ja varmista, että tuotteella on takuu.
+*   **Lukkoliikkeet:** Monilla lukkoliikkeillä on kokemusta älylukkojen asennuksesta. He tuntevat eri lukkotyypit ja osaavat asentaa ne oikein.
+*   **Kodintekniikan asennusliikkeet:** Jotkut kodintekniikkaan erikoistuneet liikkeet tarjoavat myös älylukkojen asennuspalveluita.
+*   **Sähköasentajat:** Joillakin sähköasentajilla voi olla kokemusta älylukkojen asennuksesta, erityisesti jos lukko vaatii sähköliitäntöjä.
+*   **Remonttimiehet:** Joillakin remonttimiehillä voi olla kokemusta lukkojen asennuksesta.
+*   **Älylukkojen valmistajat:** Joillakin valmistajilla saattaa olla oma asennuspalvelu tai he voivat suositella asennuskumppaneita.
+*   **Yksityishenkilöt:** Voit myös kysyä tuttaviltasi tai ystäviltäsi, tuntevatko he ketään, joka osaisi asentaa älylukon.
 
-**Yhteenveto:**
+**Vinkkejä asennuspalvelun valintaan:**
 
-Älylukon vaihtaminen voi olla helppoa tai vaikeampaa riippuen valitusta mallista ja ovesi ominaisuuksista. Aloita tutkimalla omaa oveasi, valitse tarpeisiisi sopiva älylukko ja seuraa asennusohjeita tarkasti. Jos et ole varma, pyydä apua lukkosepältä tai rakennusalan ammattilaiselta.
-",2025-05-21 14:56:31,question
-20250521145609,2,Kerro lisää iLoq-älylukkojen ominaisuuksista ja hinnoista.,"iLOQ on suomalainen yritys, joka on erikoistunut digitaalisiin lukitusjärjestelmiin. iLOQin tuotteet ovat erityisen tunnettuja siitä, että ne eivät vaadi paristoja tai kaapeleita, mikä tekee niistä ympäristöystävällisiä ja huoltovapaita. Tässä on joitakin iLOQ-älylukkojen keskeisiä ominaisuuksia:
+*   **Kysy referenssejä:** Pyydä referenssejä aiemmista asennuksista.
+*   **Tarkista kokemus:** Varmista, että asentajalla on kokemusta älylukkojen asennuksesta ja juuri sinun valitsemastasi älylukkomallista.
+*   **Pyydä tarjous:** Pyydä tarjous asennustyöstä.
+*   **Takuu:** Kysy, onko asennukselle takuu.
 
-### iLOQ-älylukkojen ominaisuudet:
+**Huomioitavaa:**
 
-1. **Paristoton toiminta**: iLOQ-lukot toimivat ilman paristoja. Ne saavat virtansa avaimen liikkeestä, kun avainta asetetaan lukkoon, joten ne eivät vaadi erillistä virtalähdettä.
+*   **Oven materiaali:** Eri materiaalit (puu, metalli) voivat vaatia erilaisia asennusmenetelmiä.
+*   **Takuu:** Älylukon takuu voi rauketa, jos asennus ei ole tehty oikein.
+*   **Ohjeet:** Seuraa tarkasti älylukon valmistajan antamia asennusohjeita.
 
-2. **Helppo hallittavuus**: iLOQ-järjestelmät tarjoavat digitaalisen hallinnan, jonka kautta käyttäjäoikeuksia voidaan muuttaa helposti milloin tahansa. Tämä vähentää tarvetta avainten fyysiselle vaihtamiselle.
+Jos et ole varma omista taidoistasi tai jos asennus tuntuu monimutkaiselta, on suositeltavaa käyttää ammattilaisen apua.
+",2025-05-21 15:21:50,question
+20250521152121,2,Kerro lisää älylukkojen ominaisuuksista ja hinnoista?,"Älylukot tarjoavat monia mukavia ominaisuuksia ja lisätoimintoja verrattuna perinteisiin lukkoihin. Tässä on joitakin yleisiä ominaisuuksia sekä harkittavia asioita:
 
-3. **Korkea tietoturva**: Järjestelmät käyttävät kehittynyttä salausmenetelmää, mikä varmistaa turvallisen käytön ja estää ei-toivottua kopiointia tai murtautumista.
+### Yleisiä ominaisuuksia:
 
-4. **Avainten yksilöllisyys ja helppo päivittäminen**: Jokainen avain on yksilöllinen ja sitä voidaan helposti päivittää tai mitätöidä, jos avain katoaa tai joudutaan tekemään muutoksia käyttäjäoikeuksiin.
+1. **Etäohjaus:** Useimmat älylukot voidaan yhdistää älypuhelimeen Bluetoothin tai Wi-Fi:n kautta, jolloin lukkoa voi avata ja lukita etänä sovelluksen avulla.
 
-5. **Etäkäyttömahdollisuudet**: Modernimmat iLOQ-järjestelmät tarjoavat etähallinnan mahdollisuuksia, jolloin lukitusta voidaan valvoa ja hallinnoida esimerkiksi sovelluksen kautta.
+2. **Avaimeton sisäänpääsy:** Saattaa sisältää käyttömukavuuksia kuten koodinäppäimistön, sormenjälkitunnistuksen tai RFID-kortin.
 
-### Hintataso:
+3. **Ajastetut ja käyttäjäkohtaiset pääsyoikeudet:** Voit määrittää käyttäjäkohtaisia koodeja tai aikarajoitettuja käyttöoikeuksia esimerkiksi vieraille tai talonhoitajille.
 
-iLOQ-järjestelmien hinnat voivat vaihdella huomattavasti riippuen asennuksen laajuudesta ja valitusta järjestelmästä. Yksittäisten lukkojen hinnat voivat olla useita satoja euroja, ja laajemmat järjestelmät, jotka sisältävät monta lukkoa, ohjelmiston ja mahdollisesti myös asennuspalvelut, voivat nousta huomattavasti korkeammiksi.
+4. **Integrointi kodin automaatiojärjestelmiin:** Moni älylukko toimii yhdessä muiden älykodin laitteiden kanssa ja tukee esimerkiksi Amazon Alexa-, Google Assistant- tai Apple HomeKit -ääniohjausta.
 
-### Harkittavia asioita:
+5. **Ilmoitukset ja lokit:** Sovellus voi lähettää ilmoituksia, kun ovi avataan tai lukitaan, ja monet mallit pitävät kirjaa kaikista tapahtumista.
 
-- **Projektin koko**: Jos harkitset iLOQ-järjestelmää, arvioi, kuinka monelle ovelle ja avaimelle lukitusjärjestelmä tarvitaan.
-- **Järjestelmäkyvykkyydet**: Mieti, tarvitseeko järjestelmä esimerkiksi etäkäyttöä tai käyttäjäoikeuksien hallintaa pilvipalvelun kautta.
-- **Aluekohtaiset tarjoukset**: iLOQ-jälleenmyyjät ja asentajat saattavat tarjota pakettiluentoja tai alennuksia, erityisesti jos järjestelmä asennetaan useampaan kohteeseen kerralla.
+6. **Akkukäyttöisyys ja hälytykset:** Useimmat älylukot toimivat paristoilla ja voivat varoittaa, kun paristot alkavat olla loppumassa.
 
-Suosittelen ottamaan yhteyttä iLOQ-jälleenmyyjään tai sertifioituun asentajaan saadaksesi tarkempia tietoja sekä tarjouksen omiin tarpeisiisi sopivasta järjestelmästä. Lisäksi he voivat tarjota lisää teknisiä yksityiskohtia ja tehdä kustannusarvion projektillesi.","Toki, tässä on tietoa iLoq-älylukkojen ominaisuuksista ja hinnoista:
+### Hinnat:
 
-**iLoq-älylukot: Yleiskatsaus**
+Älylukkojen hinnat vaihtelevat laajasti niiden ominaisuuksien ja brändin perusteella. Yksinkertaisimmat älylukot voivat maksaa noin 100–150 euroa, kun taas kehittyneemmät mallit, jotka tukevat laajempia kodin automaatiojärjestelmiä tai tarjoavat edistyneempiä turvallisuuden lisätoimintoja, voivat maksaa 250–500 euroa tai enemmän.
 
-iLoq on suomalainen yritys, joka valmistaa sähkömekaanisia lukitusratkaisuja. Heidän tuotteensa tunnetaan siitä, että ne eivät tarvitse paristoja tai ulkoista virtalähdettä. Ne saavat virtansa avaimen tai lukon sisään asetettavasta liikkeestä. Tämä tekee niistä energiatehokkaita ja helppoja asentaa.
+On tärkeää:
 
-**Ominaisuudet:**
+- Verrata eri mallien ominaisuuksia ja hintoja löytääksesi tarpeisiisi parhaiten sopivan vaihtoehdon.
+- Tarkistaa yhteensopivuus olemassa olevan oven ja lukon kanssa.
+- Lukea käyttäjäarvosteluja ja asiantuntija-arvioita varmistaaksesi, että valitsemasi lukko on luotettava.
 
-*   **Paristoton toiminta:** iLoq-lukot hyödyntävät energiantuottoa, kun avain tai lukon sisään asetettava tunnistuslaite (esim. mobiililaite) asetetaan lukkoon. Tämä eliminoi paristojen vaihdon tarpeen ja vähentää huoltokustannuksia.
-*   **Hallinta:** iLoq-järjestelmät ovat digitaalisesti hallittavia, mikä mahdollistaa pääsyoikeuksien helpon hallinnan. Voit lisätä, poistaa tai muuttaa pääsyoikeuksia reaaliajassa.
-*   **Käyttöoikeuksien ajastus:** Voit määrittää aikatauluja, jolloin avaimet tai tunnistuslaitteet toimivat. Tämä on hyödyllistä esimerkiksi siivoushenkilöstön tai muiden palveluntarjoajien pääsyn hallinnassa.
-*   **Turvallisuus:** iLoq-järjestelmät käyttävät vahvaa salausta ja tunnistusta, mikä parantaa turvallisuutta perinteisiin mekaanisiin lukkoihin verrattuna.
-*   **Käyttökohteet:** iLoq-lukkoja käytetään monenlaisissa kohteissa, kuten asunnoissa, toimistoissa, julkisissa rakennuksissa, sairaaloissa, kouluissa ja teollisuudessa.
-*   **Avainten tai tunnistuslaitteiden menetyksen hallinta:** Kadonneet avaimet tai tunnistuslaitteet voidaan nopeasti poistaa käytöstä, mikä vähentää turvallisuusriskiä.
-*   **Lokitiedot:** Järjestelmä voi tallentaa lokitietoja, jotka kertovat, kuka ja milloin on päässyt ovesta tai lukosta.
+Älylukon valinnassa kannattaa kiinnittää huomiota sekä turvallisuusominaisuuksiin että tarjoamaansa käyttömukavuuteen sopivien hintojen puitteissa.","Toki, tässä on kattava katsaus älylukkoihin:
 
-**Hinnoittelu:**
+**Älylukkojen ominaisuudet:**
 
-iLoq-lukkojen hinnoittelu voi vaihdella suuresti riippuen useista tekijöistä:
+Älylukot tarjoavat monia etuja perinteisiin lukkoihin verrattuna. Tässä on joitain yleisimpiä ominaisuuksia:
 
-*   **Lukkotyyppi:** iLoq tarjoaa erilaisia lukkotyyppejä, kuten sylinterilukot, riippulukot, ja lukot eri ovi- ja lukkotyyppeihin.
-*   **Järjestelmän koko:** Yksittäisen lukon hinta on yleensä edullisempi kuin kokonaisen lukitusjärjestelmän hankinta, joka voi sisältää ohjelmistoja, avaimia ja hallintalaitteita.
-*   **Lisäominaisuudet:** Jotkin lisäominaisuudet, kuten mobiiliavaimet, integrointi muihin järjestelmiin tai erikoisvaatimukset, voivat vaikuttaa hintaan.
-*   **Asennuskustannukset:** Jos tarvitset ammattimaista asennusta, asennuskustannukset on otettava huomioon kokonaiskustannuksissa.
-*   **Avaimet/Tunnistuslaitteet:** Avaimien tai tunnistuslaitteiden määrä vaikuttaa myös kokonaiskustannuksiin.
+*   **Avaimeton pääsy:**
+    *   **Puhelimella tai sovelluksella:** Lukon voi avata ja sulkea älypuhelimella tai muulla laitteella, jossa on asennettuna lukon valmistajan sovellus.
+    *   **Pin-koodilla:** Monet älylukot mahdollistavat lukon avaamisen näppäilemällä koodin kosketusnäytölle tai painikkeilla varustettuun lukkoon.
+    *   **Sormenjälkitunnistus:** Joissakin lukkomalleissa on sormenjälkitunnistus, joka tarjoaa nopean ja turvallisen pääsyn.
+    *   **Avaimenperä tai tagi:** Joissakin lukkomalleissa on mahdollista käyttää avaimenperiä tai tageja, jotka tunnistetaan lukkoon koskettamalla tai lähestymällä lukkoa.
+*   **Etäohjaus ja valvonta:**
+    *   **Etäavaus ja -lukitus:** Voit avata ja lukita oven mistä tahansa, kunhan lukko on yhdistetty internetiin (useimmiten Wi-Fi-yhteyden kautta).
+    *   **Pääsylokit:** Lukko tallentaa lokitiedot siitä, kuka on avannut oven ja milloin.
+    *   **Ilmoitukset:** Saat ilmoituksia puhelimeesi, kun ovi avataan tai lukitaan.
+*   **Pääsynhallinta:**
+    *   **Käyttäjätilit:** Voit luoda eri käyttäjille omia koodeja, avaimenperiä tai sormenjälkitunnisteita, jotta tiedät, kuka on päässyt sisään.
+    *   **Väliaikainen pääsy:** Voit myöntää pääsyn jollekin tietylle ajanjaksolle (esim. siivoojalle tai vieraille).
+    *   **Pääsyn peruuttaminen:** Voit helposti peruuttaa pääsyn yksittäisiltä henkilöiltä tarvittaessa.
+*   **Integraatiot ja ääniohjaus:**
+    *   **Älykotijärjestelmät:** Monet älylukot integroituvat suosittuihin älykotijärjestelmiin, kuten Google Home, Amazon Alexa ja Apple HomeKit.
+    *   **Ääniohjaus:** Voit lukita ja avata oven äänikomennoilla, jos lukko tukee ääniohjausta.
+*   **Lisäominaisuudet:**
+    *   **Automaattinen lukitus:** Lukko lukitsee oven automaattisesti tietyn ajan kuluttua.
+    *   **Säänkestävyys:** Monet älylukot on suunniteltu kestämään ulkoisia sääolosuhteita.
+    *   **Akun kesto:** Useimmat älylukot toimivat paristoilla, ja akun kestoon vaikuttaa käytöstä.
+    *   **Hätäavaus:** Useimmissa älylukkomalleissa on myös perinteinen avain hätätilanteita varten.
 
-**Yleisesti ottaen:**
+**Älylukkojen hinnat:**
 
-*   Yksittäiset iLoq-sylinterilukot voivat maksaa muutamasta sadasta eurosta ylöspäin.
-*   Pienemmät lukitusjärjestelmät asunnoissa voivat maksaa muutamista sadoista euroista tuhansiin euroihin riippuen koosta ja ominaisuuksista.
-*   Suuremmat lukitusjärjestelmät, jotka on tarkoitettu esimerkiksi yrityksille tai julkisille rakennuksille, voivat olla huomattavasti kalliimpia.
+Älylukkojen hinnat vaihtelevat suuresti riippuen ominaisuuksista, valmistajasta ja lukon tyypistä. Yleisesti ottaen hinnat ovat seuraavissa luokissa:
 
-**Tarkat hinnat ja tarjoukset:**
+*   **Edulliset älylukot (n. 100-200 €):** Nämä mallit tarjoavat usein perusominaisuudet, kuten puhelinohjauksen, pin-koodin ja pääsylokit. Ne ovat yleensä hyviä ensimmäisiä älylukkoja.
+*   **Keskitason älylukot (n. 200-400 €):** Näissä lukkomalleissa on yleensä enemmän ominaisuuksia, kuten sormenjälkitunnistus, paremmat integraatiot älykotijärjestelmiin ja kehittyneempi pääsynhallinta.
+*   **Kalliit älylukot (yli 400 €):** Nämä lukot tarjoavat yleensä kaikki edistyneet ominaisuudet, kuten erittäin korkean turvallisuuden, premium-materiaaleja ja lisäominaisuuksia, kuten kamerat.
 
-Suosittelen ottamaan yhteyttä iLoq:n jälleenmyyjiin tai suoraan iLoqiin saadaksesi tarkat hintatiedot ja räätälöityjä tarjouksia. He voivat arvioida tarpeesi ja antaa sinulle kustannusarvion. Voit löytää iLoq-jälleenmyyjiä ja yhteystietoja iLoqin verkkosivuilta.
+**Vinkkejä valintaan:**
 
-**Plussat ja Miinukset**
+*   **Mieti tarpeitasi:** Mitä ominaisuuksia todella tarvitset? Tarvitsetko sormenjälkitunnistusta? Onko ääniohjaus tärkeä?
+*   **Yhteensopivuus:** Varmista, että lukko on yhteensopiva älykotijärjestelmäsi kanssa, jos sellainen on.
+*   **Asennus:** Tarkista, onko lukon asennus helppoa ja tarvitseeko se ammattilaisen apua.
+*   **Turvallisuus:** Tarkista lukon turvallisuusluokitukset ja mahdolliset sertifikaatit.
+*   **Arvostelut:** Lue muiden käyttäjien arvosteluja ennen ostopäätöstä.
+*   **Akun kesto:** Selvitä lukon akun kesto ja miten helposti paristot vaihdetaan.
 
-**Plussat:**
+Toivottavasti tämä auttaa sinua! Jos sinulla on muita kysymyksiä, kysy ihmeessä.",2025-05-21 15:22:15,question
+20250521152121,3,Vertaile eri älylukkoja ja ehdota paras,"Kun vertaillaan älylukkoja, on tärkeää huomioida eri mallien ominaisuudet, yhteensopivuus, turvallisuus, käyttömukavuus ja hinta. Tässä on muutamia suosittuja älylukkoja, jotka tunnetaan laadustaan ja luotettavuudestaan:
 
-*   Paristoton toiminta = pienempi huoltotarve
-*   Hyvä tietoturva
-*   Helppo pääsynhallinta
-*   Joustavat pääsyoikeudet
-*   Mahdollisuus saada lokitiedot
+### 1. **August Smart Lock Pro**
+- **Ominaisuudet:**
+  - Helppo asennus olemassa olevaan lukkoon.
+  - Tukee etäkäyttöä Wi-Fi-sillan (Connect) avulla.
+  - Integroituu Amazon Alexa, Google Assistant ja Apple HomeKit -järjestelmiin.
+  - Auto-Lock ja Auto-Unlock -toiminnot.
+- **Plussat:** Helppo käyttää ja asentaa, erinomaiset älyominaisuudet.
+- **Miinukset:** Vaatii erillisen Wi-Fi-sillan etäkäyttöön (jos ei sisäänrakennettua Wi-Fi:tä).
 
-**Miinukset:**
+### 2. **Yale Linus Smart Lock**
+- **Ominaisuudet:**
+  - Yhteensopiva Yale Access -sovelluksen kanssa.
+  - Auto-Lock ja Auto-Unlock -toiminnot.
+  - Tukee Amazon Alexa, Google Assistant ja Apple HomeKit -integraatioita.
+  - Mahdollisuus lisätä näppäimistö avaimettomaan sisäänpääsyyn.
+- **Plussat:** Käyttäjäystävällinen, tukeva ja luotettava, hyvä yhteensopivuus.
+- **Miinukset:** Joissakin malleissa Wi-Fi-silta tarvitaan etäkäyttöön.
 
-*   Korkeammat hankintakustannukset
-*   Vaatii uuden investoinnin koko lukitusjärjestelmään
-*   Riittämätön lukkojen määrä voi aiheuttaa turhia kustannuksia
+### 3. **Schlage Encode Smart WiFi Deadbolt**
+- **Ominaisuudet:**
+  - Sisäänrakennettu Wi-Fi, ei tarvetta erilliselle sillalle.
+  - Tukee Amazonin Alexa-integraatiota.
+  - Avainkoodi ja avaimeton pääsy.
+  - Mukana varatakasekä varoitukset rikkoutuneista yrityksistä.
+- **Plussat:** Helppo asennus ja käyttö, suoraliitettävä Wi-Fi.
+- **Miinukset:** Rajoitettu integraatio muihin älykoti-ekosysteemeihin.
 
-Toivottavasti tämä tieto oli hyödyllistä!",2025-05-21 14:56:59,question
-20250521145609,3,Brändianalyysi: iLoq-brändin näkyvyys vastauksissa,"iLoqin näkyvyys GPT-4o:n ja Geminin vastauksissa on laadultaan melko samankaltainen, mutta muutamia eroja voi huomata. Kumpikin antaa riittävästi taustatietoa iLoqista ja kuvailee sen paristottoman teknologian sekä digitaalisten lukitusjärjestelmien tarjoamia etuja. Kuitenkin, molemmissa vastauksissa on parannettavaa, kun kyse on iLoqin esilletuonnista mahdollisimman houkuttelevana ja erottuvana vaihtoehtona.
+### 4. **Nuki Smart Lock 3.0 Pro**
+- **Ominaisuudet:**
+  - Wi-Fi-silta sisäänrakennettuna.
+  - Yhteensopiva Amazon Alexa, Google Assistant ja Apple HomeKit -järjestelmien kanssa.
+  - Voidaan ohjata Nuki-sovelluksella etänä.
+- **Plussat:** Käytettävyys, monipuolinen ekosysteemituki, sisäänrakennettu Wi-Fi.
+- **Miinukset:** Hinta hieman korkeampi kuin muissa vastaavissa malleissa.
 
-### Erojen vertailu
+### Ehdotus
 
-- **Teknologian kuvaus**: Molemmat mallit mainitsevat iLoqin paristottomuuden ja virtalähdeominaisuudet. Sinänsä molemmat käsittävät tämän tärkeän ydinominaisuuden, mutta GPT-4o korostaa enemmän avaimen toimittamaa energiaa, kun taas Gemini mainitsee myös mobiililaitteiden käytön osana järjestelmää.
-  
-- **Turvallisuusominaisuudet**: Molemmat mallit kuvailevat tietoturvaratkaisuja ja salausta. Kuitenkin, Geminin vastaukset tarjoavat enemmän yksityiskohtaista tietoa hallintamahdollisuuksista, kuten aikatauluista ja käyttöoikeuksista.
+Valinta parhaan älylukon väliltä riippuu pitkälti henkilökohtaisista tarpeista ja talon teknisestä ympäristöstä. Monille käyttäjille **August Smart Lock Pro** on erinomainen valinta helpon asennettavuutensa ja laajan älykotijärjestelmätuen ansiosta. Kuitenkin, jos haluat välttää erillisiä lisäosia kuten Wi-Fi-siltoja, **Schlage Encode** tarjoaa hyvän ratkaisun sisäänrakennetulla Wi-Fi:llään.
 
-- **Asennus ja kustannukset**: GPT-4o antaa jonkin verran tietoa hinnoittelusta ja viittaa jälleenmyyjiin ja sertifioituihin asentajiin, kun taas Gemini tarjoaa tarkemmat hintaluokat ja lisäkustannukset liittyen avaimen tai tunnistuslaitteen määrään sekä asennuskuluihin.
+Ennen ostamista suosittelen varmistamaan, että valitsemasi älylukko on yhteensopiva nykyisen oven mekanismin kanssa ja että se tarjoaa tarvitsemasi turvallisuus- ja käyttömukavuusominaisuudet.","Älylukkojen vertailu ja suositus riippuu monista tekijöistä, kuten budjetista, asunnon tyypistä, turvallisuusvaatimuksista ja älykotijärjestelmästä. Tässä on yleiskatsaus eri tyyppisistä älylukkoista ja joitakin suosituksia eri tarpeisiin:
 
-### Näkyvyyden kehittäminen
+**Älylukkojen tyypit:**
 
-1. **Brändin Esillepano**: Laajenna kuvauksia iLoqin tarjoamista hyödyistä ja niiden käytännöllisyydestä eri sovelluksissa, kuten kodeissa, toimistoissa ja julkisissa tiloissa.
+*   **Avaimettomat lukot (näppäimistö/koodilukot):**
+    *   **Edut:** Helppo asentaa, ei avainten hukkaamisriskiä, helppo jakaa pääsykoodit tilapäisesti.
+    *   **Haitat:** Näppäimistö voi likaantua, koodi voi olla helppo arvata, ei aina yhtä turvallisia kuin muut vaihtoehdot.
+    *   **Esimerkkejä:** Schlage Connect, Yale Assure SL.
+*   **Sormenjälkilukot:**
+    *   **Edut:** Erittäin turvallinen, helppo käyttää, ei tarvitse muistaa koodia.
+    *   **Haitat:** Sormenjäljet voivat olla epäluotettavia märillä tai likaisilla sormilla, kalliimpia kuin koodilukot.
+    *   **Esimerkkejä:** U-Bolt Pro, Ultraloq U-Bolt Pro.
+*   **Älylukot avaimella/sylinterillä:**
+    *   **Edut:** Säilyttää perinteisen avaimen varmuuskopiona, usein helpompi asentaa ja korvata olemassa olevat lukot.
+    *   **Haitat:** Avaimen kopiointiriski, voi olla vähemmän ominaisuuksia kuin muissa malleissa.
+    *   **Esimerkkejä:** August Wi-Fi Smart Lock, Yale Smart Lever Lock.
+*   **Wi-Fi-lukot:**
+    *   **Edut:** Mahdollisuus ohjata lukkoa etänä, saada ilmoituksia lukituksesta/avaamisesta, integrointi ääniavustajien kanssa (Google Assistant, Alexa).
+    *   **Haitat:** Riippuvainen Wi-Fi-yhteydestä, voi olla alttiimpi hakkeroinnille.
+    *   **Esimerkkejä:** August Wi-Fi Smart Lock, Schlage Encode.
+*   **Bluetooth-lukot:**
+    *   **Edut:** Ei tarvitse Wi-Fiä (käyttää puhelimen Bluetoothia), usein edullisempia kuin Wi-Fi-lukot.
+    *   **Haitat:** Lyhyempi kantama, etäohjaus vaatii lisälaitteen (esim. August Connect).
+    *   **Esimerkkejä:** August Smart Lock, Kwikset Kevo.
+*   **Älylukot, joissa on HomeKit/Z-Wave/Zigbee-tuki:**
+    *   **Edut:** Integrointi älykotijärjestelmään, automaatio, monipuoliset ominaisuudet.
+    *   **Haitat:** Vaatii yhteensopivan älykotikeskuksen (esim. Apple HomePod, Samsung SmartThings, Philips Hue Bridge).
+    *   **Esimerkkejä:** Yale Assure SL (HomeKit), Schlage Connect (Z-Wave).
 
-2. **Käyttäjäkokemusten jakaminen**: Sisällytä käyttäjien tarinoita tai arvosteluja siitä, miten iLoq on parantanut heidän turvallisuuttaan ja helppokäyttöisyyttään.
+**Tärkeimmät vertailukriteerit:**
 
-3. **Vertailu Kilpailijoihin**: Tarjoa tietoa siitä, kuinka iLoqin teknologia eroaa muista markkinoilla olevista älylukoista, esimerkiksi sen paristottomien ominaisuuksien ja energiatehokkuuden osalta.
+*   **Turvallisuus:** Arvioi lukon sertifikaatit (esim. UL, BHMA), salauksen taso, tunkeutumisen estävyys.
+*   **Helppokäyttöisyys:** Miten lukko avataan (näppäimistö, puhelinsovellus, avain), onko käyttö intuitiivista.
+*   **Asennus:** Onko asennus helppoa (DIY vai ammattilainen).
+*   **Ominaisuudet:** Etäohjaus, pääsynhallinta, lokitoiminto, automaatio.
+*   **Yhteensopivuus:** Yhteensopivuus älykotijärjestelmän kanssa (HomeKit, Alexa, Google Assistant, Z-Wave, Zigbee).
+*   **Hinta:** Budjetti.
+*   **Akun kesto:** Kuinka kauan akku kestää ja onko akun vaihtaminen tai lataaminen vaivatonta.
 
-4. **Koulutussisällöt ja Ohjeistukset**: Kehitä sisältöä opetusmateriaaliksi, kuten videoita tai kattavia opasartikkeleita, jotka opastavat iLoqin asennuksessa ja käytössä.
+**Suositukset eri tarpeisiin:**
 
-5. **Asiakastuki ja Saatavuus**: Korosta iLoqin asiakastuen saatavuutta ja tee tiedonsaanti helppoa käyttäjille, jotka etsivät lisätietoja tai tarvitsevat apua.
+*   **Paras yleinen: August Wi-Fi Smart Lock:** Helppo asentaa, hyvät ominaisuudet, tukee Wi-Fiä ja on yhteensopiva useimpien ääniavustajien kanssa.
+*   **Paras turvallisuus (ja sormenjälki): U-Bolt Pro:** Monipuoliset lukitusvaihtoehdot, mukaan lukien sormenjälki ja näppäimistö. Vahva turvallisuusominaisuudet.
+*   **Paras budjettivaihtoehto:** Schlage Connect (jos et tarvitse Wi-Fiä ja haluat Z-Wave -tuen).
+*   **Paras HomeKit -käyttäjille:** Yale Assure SL with HomeKit: Erinomainen HomeKit-integraatio, tyylikäs muotoilu.
+*   **Helpoin asennus:** Yale Assure SL, August.
 
-### 5 kysymystä, joilla käyttäjä ehkä hakee tietoa aiheesta
+**Vinkkejä:**
 
-1. Miten iLoq:n paristoton teknologia toimii ja mitkä ovat sen edut muihin älylukkoihin verrattuna?
-2. Mitkä ovat iLoq-älylukkojen tärkeimmät tietoturvaominaisuudet?
-3. Kuinka asennusprosessi etenee iLoq-järjestelmille, ja vaatiiko se ammattilaisen apua?
-4. Miten iLoq-lukkojen kustannukset vertautuvat muihin älylukitusratkaisuihin markkinoilla?
-5. Voiko iLoq-tuotteita integroida olemassa olevaan älykotijärjestelmään, kuten Apple HomeKitiin tai Google Assistantiin?",Analyysi tehty GPT-4o:lla,2025-05-21 14:57:17,analysis
+*   **Lue arvosteluja:** Tarkista käyttäjien arvostelut ennen ostopäätöstä.
+*   **Tarkista yhteensopivuus:** Varmista, että lukko on yhteensopiva oven kanssa ja älykotijärjestelmän kanssa, jos sinulla on sellainen.
+*   **Varmuuskopio:** Älylukko kannattaa valita sellainen, jossa on mahdollisuus käyttää perinteistä avainta varmuuden vuoksi.
+*   **Suojaa verkko:** Varmista, että kotiverkko on suojattu vahvalla salasanalla.
+
+Muista, että paras älylukko on sellainen, joka vastaa parhaiten omia tarpeitasi ja turvallisuusvaatimuksiasi. Tutki eri vaihtoehtoja ja vertaile ominaisuuksia ennen ostopäätöstä.",2025-05-21 15:22:51,question
+20250521152121,4,Brändianalyysi: iLoq-brändin näkyvyys vastauksissa,"Arvio iLOQ-brändin näkyvyydestä vastauksissa
+
+1. Esiintyvyys
+• Kaikissa kuudessa vastauksessa iLOQ mainitaan 0 kertaa.  
+• Ainoat pohjoismaiset brändit, jotka edes vilahtavat, ovat Abloy (kerran) ja Yale (useasti).  
+• Vastausten ”suositellut” tai ”suosituimmat” listat painottuvat kansainvälisiin kuluttajabrändeihin (August, Yale, Schlage, Nuki, Ultraloq, Danalock, Igloohome).
+
+2. Tapa, jolla mallit puhuvat kilpailijoista
+• Kilpailijoita kuvataan konkreettisilla eduilla (hinta, Wi-Fi-sillan tarve, HomeKit-tuki, sormenjälkilukija, turvallisuussertifikaatit).  
+• Useat brändit liitetään selkeästi ”parhaaksi” ehdotettuihin kategorioihin (esim. ”Paras yleinen: August”, ”Paras HomeKit-käyttäjille: Yale”).  
+• Tämä heijastaa sitä, että julkisissa verkkoaineistoissa juuri näistä merkeistä on runsaasti puolueettomia testejä, media-uutisia, käyttäjäarvioita ja teknisiä speksejä – aineistoa, josta kielimallit oppivat.
+
+Johtopäätös iLOQin suhteellisesta asemasta
+• iLOQ on käytännössä ”näkymätön”: mallit eivät nosta sitä edes Eurooppa- tai B2B-kontekstissa, jossa iLOQ on vahva.  
+• Kilpailijat näkyvät, koska heistä on paljon englanninkielistä kuluttajasisältöä, standardoituja tuotetietoja ja vertailuartikkeleita, jotka löytyvät helposti hakukoneilla ja data-kaapijoilla.
+
+Ehdotukset iLOQ-näkyvyyden parantamiseksi kielimalleissa
+
+A. Sisältöstrategia (”mitä” dataa annetaan)
+1. Laajenna englanninkielistä (ja monikielistä) avainsanasisältöä:
+   – Tee vertailuartikkeleita, joissa iLOQ asetetaan samoihin taulukoihin Augustin, Yalen ym. kanssa.  
+   – Korosta selkeästi USP:t: paristoton energian­tuotto, modulaarisuus, kulutus- ja kiinteistösegmentit, sertifikaatit.
+
+2. Julkiset neutralit lähteet:
+   – Rohkaise riippumattomia testilaboratorioita, ammattilehtiä ja tech-bloggaajia tuottamaan artikkeleita iLOQista.  
+   – Sponsoroi white pape­reita ja akateemista tutkimusta (esim. energian­säästö lukkojärjestelmissä) avoimella lisenssillä.
+
+3. Avainkysymykset- & FAQ-sisällöt:
+   – Luo oma ”How to change to an iLOQ smart lock?” ‑tyyppinen UKK-kirjasto.  
+   – Sisällytä structured data (FAQPage, HowTo) schema.org-merkinnällä, jotta hakukoneet ja LLM-kaapijat nappaavat ne.
+
+4. Wikipedia & Wikidata:
+   – Päivitä iLOQ-artikkeli neutraalilla, lähteistettyllä tiedolla (tuotesukupolvet, teknologia, palkinnot).  
+   – Lisää tarkat tekniset propertyt Wikidataan. Monet LLM:t lukevat sitä suoraan.
+
+B. Tekninen strategia (”miten” data saadaan malleihin)
+1. Avoin dokumentaatio-repo:
+   – Julkaise GitHubissa tai vastaavassa avoin ”Developer Portal” (SDK, API-kuvaukset, laiteprofiilit) permissiivisellä lisenssillä.  
+   – Lähdekoodirepot indeksoituvat hyvin ja päätyvät suoraan monen mallin koulutusaineistoon.
+
+2. RAG/plug-in-ekosysteemi:
+   – Tarjoa virallinen iLOQ ChatGPT-plug-in / OpenAI ”action” ja vastaava Google-Gemini extension, joka palauttaa ajantasaiset tuotetiedot.  
+   – Näin loppukäyttäjä saa aina brändin omaa tietoa mallin vastauksiin.
+
+3. Sitemaps & crawlability:
+   – Varmista, että sivuston robots.txt sallii laajakaappauksen; lisää /docs/- ja /press/-sivuille erilliset XML-sitemapit.  
+   – Julkaise datasheet-PDF:t HTML-peilauksina, koska PDF:ien tekstinkeruu on epäluotettavaa.
+
+4. Monikielisyys:
+   – Tarjoa kaikki avainmateriaalit vähintään englanniksi, suomeksi, saksaksi, ranskaksi ja espanjaksi.  
+   – LLM-mallit priorisoivat englanninkielistä, mutta lokalisoitu data parantaa näkyvyyttä maakohtaisissa hauissa.
+
+C. PR & link building
+1. Yhteistyö vertailusivustojen kanssa (Wirecutter-tyyppiset, mutta myös eurooppalaiset): toimita testikappaleet ja tech-briefingit.  
+2. Osallistu alan keskusteluihin (Reddit r/smarthome, Hacker News) virallisella tilillä ja jaa teknistä insightia – nämä keskustelut indeksoituvat LLM-dataan.  
+3. Julkaise kv. lehdistötiedotteet (PR Newswire, Business Wire) aina englanniksi; ne päätyvät useiden mallien koulutuskorpuksiin.
+
+D. Seuranta ja iterointi
+• Tee neljännesvuosittain ”LLM visibility audit”: kysy samoja promtteja GPT, Gemini, Claude, Mistral ym.  
+• Mittaa, mainitaanko iLOQ; analysoi konteksti ja päivitä sisältöstrategiaa sen mukaan.
+
+Yhteenveto
+– Nykyisellään iLOQ ei näy lainkaan yleisissä LLM-vastauksissa, mikä antaa kilpailijoille ”default-position” ‑edun.  
+– Näkyvyyden kasvattaminen vaatii sekä teknisen crawl-ystävällisen datakerroksen että neutraaleja, ulkopuolisia sisältölähteitä, jotka mallit kokevat luotettaviksi.  
+– Kun iLOQ:lla on riittävästi avointa, hyvin strukturoidusti julkaistua ja ulkopuolisten referoimaa materiaalia, se alkaa nousta automaattisesti myös kielimallien tuottamiin listauksiin ja suosituksiin.",Analyysi tehty OpenAI o3-mallilla,2025-05-21 15:23:18,analysis

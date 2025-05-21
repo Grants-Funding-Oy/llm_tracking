@@ -70,7 +70,7 @@ def analyze_conversation(conversation_df):
     # Create the prompt for analysis
     analysis_prompt = [
         {"role": "system", "content": "You are an expert in brand analysis and marketing."},
-        {"role": "user", "content": f"""Ohessa on käyttäjän kielimallille esittämät kysymykset ja kielimallin antamat vastaukset. Arvioi miten hyvin iloq näkyy vastauksissa ja miten kielimalli esittää iLoqin. Vertaile myös eroja GPT-4o:n ja Geminin vastausten välillä. Lopuksi ehdota miten näkyvyyttä kielimallien osalta voisi kehittää ja 5 kysymystä, joilla käyttäjä ehkä hakee tietoa aiheesta.
+        {"role": "user", "content": f"""Ohessa on käyttäjän kielimallille esittämät kysymykset ja kielimallin antamat vastaukset. Kysymyksiä on eri kielillä, mutta analyysi suomeksi. Arvioi miten hyvin iloq näkyy vastauksissa ja miten kielimallit esittävät iLoqin suhteessa kilpailijoihin. Lopuksi ehdota miten näkyvyyttä kielimallien osalta voisi kehittää (huomioi tekniset ja sisällölliset asiat)
 
 {conversation_str}"""}
     ]
@@ -137,7 +137,7 @@ def main():
     ], ignore_index=True)
     
     # Define follow-up question
-    followup_question = "Kerro lisää älylukkojen ominaisuuksista ja hinnoista. Kuka tekee parhaat lukot?"
+    followup_question = "Kerro lisää älylukkojen ominaisuuksista ja hinnoista?"
     
     # Add follow-up question to conversation history
     gpt_messages.append({"role": "user", "content": followup_question})
@@ -167,6 +167,37 @@ def main():
         }])
     ], ignore_index=True)
     
+    # Define third question
+    third_question = "Vertaile eri älylukkoja ja ehdota paras"
+    
+    # Add third question to conversation history
+    gpt_messages.append({"role": "user", "content": third_question})
+    
+    # Get response to third question from GPT-4o
+    print(f"Asking GPT-4o third question: {third_question}")
+    third_gpt_answer = get_gpt4o_response(gpt_messages)
+    
+    # Get response to third question from Gemini
+    print(f"Asking Gemini third question: {third_question}")
+    third_gemini_answer = get_gemini_response(third_question)
+    
+    # Add assistant's response to conversation history
+    gpt_messages.append({"role": "assistant", "content": third_gpt_answer})
+    
+    # Add to DataFrame
+    conversation_df = pd.concat([
+        conversation_df,
+        pd.DataFrame([{
+            'ConversationID': conversation_id,
+            'QuestionNumber': 3,
+            'Question': third_question,
+            'GPT4o_Answer': third_gpt_answer,
+            'Gemini_Answer': third_gemini_answer,
+            'Timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            'Type': 'question'
+        }])
+    ], ignore_index=True)
+    
     # Analyze the conversation for iLoq visibility with o3
     print("\nPerforming iLoq brand visibility analysis with OpenAI o3...")
     analysis = analyze_conversation(conversation_df)
@@ -176,7 +207,7 @@ def main():
         conversation_df,
         pd.DataFrame([{
             'ConversationID': conversation_id,
-            'QuestionNumber': 3,
+            'QuestionNumber': 4,
             'Question': "Brändianalyysi: iLoq-brändin näkyvyys vastauksissa",
             'GPT4o_Answer': analysis,
             'Gemini_Answer': "Analyysi tehty OpenAI o3-mallilla",
@@ -198,6 +229,9 @@ def main():
     print(f"Question 2: {followup_question}")
     print(f"GPT-4o Answer 2: {followup_gpt_answer[:100]}...")
     print(f"Gemini Answer 2: {followup_gemini_answer[:100]}...")
+    print(f"Question 3: {third_question}")
+    print(f"GPT-4o Answer 3: {third_gpt_answer[:100]}...")
+    print(f"Gemini Answer 3: {third_gemini_answer[:100]}...")
     
     # Print a snippet of the analysis
     print("\nAnalysis Snippet (by OpenAI o3):")

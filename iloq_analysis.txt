@@ -1,29 +1,65 @@
-iLoqin näkyvyys GPT-4o:n ja Geminin vastauksissa on laadultaan melko samankaltainen, mutta muutamia eroja voi huomata. Kumpikin antaa riittävästi taustatietoa iLoqista ja kuvailee sen paristottoman teknologian sekä digitaalisten lukitusjärjestelmien tarjoamia etuja. Kuitenkin, molemmissa vastauksissa on parannettavaa, kun kyse on iLoqin esilletuonnista mahdollisimman houkuttelevana ja erottuvana vaihtoehtona.
+Arvio iLOQ-brändin näkyvyydestä vastauksissa
 
-### Erojen vertailu
+1. Esiintyvyys
+• Kaikissa kuudessa vastauksessa iLOQ mainitaan 0 kertaa.  
+• Ainoat pohjoismaiset brändit, jotka edes vilahtavat, ovat Abloy (kerran) ja Yale (useasti).  
+• Vastausten ”suositellut” tai ”suosituimmat” listat painottuvat kansainvälisiin kuluttajabrändeihin (August, Yale, Schlage, Nuki, Ultraloq, Danalock, Igloohome).
 
-- **Teknologian kuvaus**: Molemmat mallit mainitsevat iLoqin paristottomuuden ja virtalähdeominaisuudet. Sinänsä molemmat käsittävät tämän tärkeän ydinominaisuuden, mutta GPT-4o korostaa enemmän avaimen toimittamaa energiaa, kun taas Gemini mainitsee myös mobiililaitteiden käytön osana järjestelmää.
-  
-- **Turvallisuusominaisuudet**: Molemmat mallit kuvailevat tietoturvaratkaisuja ja salausta. Kuitenkin, Geminin vastaukset tarjoavat enemmän yksityiskohtaista tietoa hallintamahdollisuuksista, kuten aikatauluista ja käyttöoikeuksista.
+2. Tapa, jolla mallit puhuvat kilpailijoista
+• Kilpailijoita kuvataan konkreettisilla eduilla (hinta, Wi-Fi-sillan tarve, HomeKit-tuki, sormenjälkilukija, turvallisuussertifikaatit).  
+• Useat brändit liitetään selkeästi ”parhaaksi” ehdotettuihin kategorioihin (esim. ”Paras yleinen: August”, ”Paras HomeKit-käyttäjille: Yale”).  
+• Tämä heijastaa sitä, että julkisissa verkkoaineistoissa juuri näistä merkeistä on runsaasti puolueettomia testejä, media-uutisia, käyttäjäarvioita ja teknisiä speksejä – aineistoa, josta kielimallit oppivat.
 
-- **Asennus ja kustannukset**: GPT-4o antaa jonkin verran tietoa hinnoittelusta ja viittaa jälleenmyyjiin ja sertifioituihin asentajiin, kun taas Gemini tarjoaa tarkemmat hintaluokat ja lisäkustannukset liittyen avaimen tai tunnistuslaitteen määrään sekä asennuskuluihin.
+Johtopäätös iLOQin suhteellisesta asemasta
+• iLOQ on käytännössä ”näkymätön”: mallit eivät nosta sitä edes Eurooppa- tai B2B-kontekstissa, jossa iLOQ on vahva.  
+• Kilpailijat näkyvät, koska heistä on paljon englanninkielistä kuluttajasisältöä, standardoituja tuotetietoja ja vertailuartikkeleita, jotka löytyvät helposti hakukoneilla ja data-kaapijoilla.
 
-### Näkyvyyden kehittäminen
+Ehdotukset iLOQ-näkyvyyden parantamiseksi kielimalleissa
 
-1. **Brändin Esillepano**: Laajenna kuvauksia iLoqin tarjoamista hyödyistä ja niiden käytännöllisyydestä eri sovelluksissa, kuten kodeissa, toimistoissa ja julkisissa tiloissa.
+A. Sisältöstrategia (”mitä” dataa annetaan)
+1. Laajenna englanninkielistä (ja monikielistä) avainsanasisältöä:
+   – Tee vertailuartikkeleita, joissa iLOQ asetetaan samoihin taulukoihin Augustin, Yalen ym. kanssa.  
+   – Korosta selkeästi USP:t: paristoton energian­tuotto, modulaarisuus, kulutus- ja kiinteistösegmentit, sertifikaatit.
 
-2. **Käyttäjäkokemusten jakaminen**: Sisällytä käyttäjien tarinoita tai arvosteluja siitä, miten iLoq on parantanut heidän turvallisuuttaan ja helppokäyttöisyyttään.
+2. Julkiset neutralit lähteet:
+   – Rohkaise riippumattomia testilaboratorioita, ammattilehtiä ja tech-bloggaajia tuottamaan artikkeleita iLOQista.  
+   – Sponsoroi white pape­reita ja akateemista tutkimusta (esim. energian­säästö lukkojärjestelmissä) avoimella lisenssillä.
 
-3. **Vertailu Kilpailijoihin**: Tarjoa tietoa siitä, kuinka iLoqin teknologia eroaa muista markkinoilla olevista älylukoista, esimerkiksi sen paristottomien ominaisuuksien ja energiatehokkuuden osalta.
+3. Avainkysymykset- & FAQ-sisällöt:
+   – Luo oma ”How to change to an iLOQ smart lock?” ‑tyyppinen UKK-kirjasto.  
+   – Sisällytä structured data (FAQPage, HowTo) schema.org-merkinnällä, jotta hakukoneet ja LLM-kaapijat nappaavat ne.
 
-4. **Koulutussisällöt ja Ohjeistukset**: Kehitä sisältöä opetusmateriaaliksi, kuten videoita tai kattavia opasartikkeleita, jotka opastavat iLoqin asennuksessa ja käytössä.
+4. Wikipedia & Wikidata:
+   – Päivitä iLOQ-artikkeli neutraalilla, lähteistettyllä tiedolla (tuotesukupolvet, teknologia, palkinnot).  
+   – Lisää tarkat tekniset propertyt Wikidataan. Monet LLM:t lukevat sitä suoraan.
 
-5. **Asiakastuki ja Saatavuus**: Korosta iLoqin asiakastuen saatavuutta ja tee tiedonsaanti helppoa käyttäjille, jotka etsivät lisätietoja tai tarvitsevat apua.
+B. Tekninen strategia (”miten” data saadaan malleihin)
+1. Avoin dokumentaatio-repo:
+   – Julkaise GitHubissa tai vastaavassa avoin ”Developer Portal” (SDK, API-kuvaukset, laiteprofiilit) permissiivisellä lisenssillä.  
+   – Lähdekoodirepot indeksoituvat hyvin ja päätyvät suoraan monen mallin koulutusaineistoon.
 
-### 5 kysymystä, joilla käyttäjä ehkä hakee tietoa aiheesta
+2. RAG/plug-in-ekosysteemi:
+   – Tarjoa virallinen iLOQ ChatGPT-plug-in / OpenAI ”action” ja vastaava Google-Gemini extension, joka palauttaa ajantasaiset tuotetiedot.  
+   – Näin loppukäyttäjä saa aina brändin omaa tietoa mallin vastauksiin.
 
-1. Miten iLoq:n paristoton teknologia toimii ja mitkä ovat sen edut muihin älylukkoihin verrattuna?
-2. Mitkä ovat iLoq-älylukkojen tärkeimmät tietoturvaominaisuudet?
-3. Kuinka asennusprosessi etenee iLoq-järjestelmille, ja vaatiiko se ammattilaisen apua?
-4. Miten iLoq-lukkojen kustannukset vertautuvat muihin älylukitusratkaisuihin markkinoilla?
-5. Voiko iLoq-tuotteita integroida olemassa olevaan älykotijärjestelmään, kuten Apple HomeKitiin tai Google Assistantiin?
+3. Sitemaps & crawlability:
+   – Varmista, että sivuston robots.txt sallii laajakaappauksen; lisää /docs/- ja /press/-sivuille erilliset XML-sitemapit.  
+   – Julkaise datasheet-PDF:t HTML-peilauksina, koska PDF:ien tekstinkeruu on epäluotettavaa.
+
+4. Monikielisyys:
+   – Tarjoa kaikki avainmateriaalit vähintään englanniksi, suomeksi, saksaksi, ranskaksi ja espanjaksi.  
+   – LLM-mallit priorisoivat englanninkielistä, mutta lokalisoitu data parantaa näkyvyyttä maakohtaisissa hauissa.
+
+C. PR & link building
+1. Yhteistyö vertailusivustojen kanssa (Wirecutter-tyyppiset, mutta myös eurooppalaiset): toimita testikappaleet ja tech-briefingit.  
+2. Osallistu alan keskusteluihin (Reddit r/smarthome, Hacker News) virallisella tilillä ja jaa teknistä insightia – nämä keskustelut indeksoituvat LLM-dataan.  
+3. Julkaise kv. lehdistötiedotteet (PR Newswire, Business Wire) aina englanniksi; ne päätyvät useiden mallien koulutuskorpuksiin.
+
+D. Seuranta ja iterointi
+• Tee neljännesvuosittain ”LLM visibility audit”: kysy samoja promtteja GPT, Gemini, Claude, Mistral ym.  
+• Mittaa, mainitaanko iLOQ; analysoi konteksti ja päivitä sisältöstrategiaa sen mukaan.
+
+Yhteenveto
+– Nykyisellään iLOQ ei näy lainkaan yleisissä LLM-vastauksissa, mikä antaa kilpailijoille ”default-position” ‑edun.  
+– Näkyvyyden kasvattaminen vaatii sekä teknisen crawl-ystävällisen datakerroksen että neutraaleja, ulkopuolisia sisältölähteitä, jotka mallit kokevat luotettaviksi.  
+– Kun iLOQ:lla on riittävästi avointa, hyvin strukturoidusti julkaistua ja ulkopuolisten referoimaa materiaalia, se alkaa nousta automaattisesti myös kielimallien tuottamiin listauksiin ja suosituksiin.
