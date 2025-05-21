@@ -4,7 +4,7 @@
 
 Olemme luoneet yksinkertaisen Python-skriptin (`company_llm_analysis.py`), joka:
 
-1. Ottaa valmiin kysymyksen suomeksi: "Miten vaihdan älylukkoon? Kuka näitä tekee?"
+1. Ottaa valmiin kysymyksen suomeksi: "Miten voin hakea julkista rahoitusta yritykselleni? Kuka tarjoaa konsultointia tähän?"
 2. Lähettää kysymyksen GPT-4o-mallille OpenAI:n API:n kautta
 3. Tallentaa kysymyksen ja vastauksen CSV-tiedostoon myöhempää analyysia varten
 4. Käyttää yksinkertaista rakennetta, jossa jokainen kysymys-vastaus-pari tallennetaan omana rivinään
@@ -18,8 +18,8 @@ Olemme nyt toteuttaneet seuraavat parannukset:
    - Säilytetään koko viestintähistoria OpenAI API -kutsuissa
 
 2. **Jatkokysymys**
-   - Ensimmäisen kysymyksen ("Miten vaihdan älylukkoon? Kuka näitä tekee?") jälkeen esitetään jatkokysymys
-   - Jatkokysymys: "Kerro lisää iLoq-älylukkojen ominaisuuksista ja hinnoista."
+   - Ensimmäisen kysymyksen ("Miten voin hakea julkista rahoitusta yritykselleni? Kuka tarjoaa konsultointia tähän?") jälkeen esitetään jatkokysymys
+   - Jatkokysymys: "Kerro lisää Grants-konsultointipalveluiden ominaisuuksista ja hinnoista."
    - API-kutsussa välitetään koko aiempi keskusteluhistoria kontekstin säilyttämiseksi
 
 3. **DataFrame-pohjainen toteutus**
@@ -66,14 +66,14 @@ Olemme lisänneet skriptiin brändianalyysivaiheen, jossa:
    - Tämä mahdollistaa erittäin laadukkaan ja syvällisen analyysin yritysnäkyvyydestä
 
 2. **Analyysisisältö**
-   - Arvioidaan miten hyvin iLoq näkyy vastauksissa
-   - Arvioidaan miten kielimallit esittävät iLoqin
+   - Arvioidaan miten hyvin Grants näkyy vastauksissa
+   - Arvioidaan miten kielimallit esittävät Grantsin
    - Vertaillaan GPT-4o:n ja Geminin eroja yrityksen esittämisessä
    - Ehdotetaan tapoja parantaa brändin näkyvyyttä kielimallien vastauksissa
-   - Tuotetaan 5 kysymystä, joilla käyttäjät todennäköisesti hakevät tietoa aiheesta
+   - Tuotetaan 5 kysymystä, joilla käyttäjät todennäköisesti hakevat tietoa aiheesta
 
 3. **Tallentaminen**
-   - Analyysi tallennetaan erilliseen tekstitiedostoon (iloq_analysis.txt)
+   - Analyysi tallennetaan erilliseen tekstitiedostoon (grants_analysis.txt)
    - Analyysi tallennetaan myös CSV-tiedostoon osana keskusteluhistoriaa
    - Analyysin tiivistelmä näytetään konsolissa
 

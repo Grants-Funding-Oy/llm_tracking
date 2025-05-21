@@ -1,0 +1,48 @@
+Arvio: miten Grants näkyy vastauksissa?  
+• GPT-4o ja Gemini eivät mainitse Grantsia kertaakaan neljässä vastauksessa.  
+• Kilpailijoista mainitaan toistuvasti Spinverse, Business Finland, ELY-keskus, Grape People, EU-rahoituskonsultit, jne.  
+• Näin ollen Grantsin “share of voice” on 0 %, kun taas Spinversellä ja muilla alan toimijoilla on selvästi parempi näkyvyys.  
+• Mallien antama vertailu luo mielikuvan, että markkinaa hallitsevat muut konsultit; Grants ei edes ilmesty harkintalistalle.
+
+Johtopäätös  
+Kielimallit eivät tunne tai nosta Grantsia. Brändi ei todennäköisesti ole riittävästi mallien koulutusdatassa (verkko, uutiset, julkaisut, Wikipedia, tietokannat). Siksi mallien “default-vastaukset” ohittavat Grantsin ja vahvistavat kilpailijoiden asemaa.
+
+Miten Grantsin näkyvyyttä voi parantaa?  
+
+1. Sisältöstrategia (syöte kielimalleille)  
+   • Julkaise runsaasti avointa, indeksoitavaa sisältöä: oppaat, FAQ-artikkelit, onnistumis-tarinat, vertailu­artikkelit (“Spinverse vs. Grants”), blogit, podcast-transkriptit.  
+   • Käytä hakusanoja, joita kysymyksissäkin esiintyy (“julkisen rahoituksen konsultti”, “EU-hanke­rahoituksen hakeminen”).  
+   • Lisää selkeät “About Grants”-kohdat jokaisen tekstin loppuun; mallit omaksuvat brändi-tietoa etenkin toistuvista kohdista.  
+   • Tarjoa sisällöt CC-BY-lisenssillä tai muuten “scrape-ystävällisesti”, jotta ne päätyvät tuleviin mallipäivityksiin.
+
+2. Strukturoidut tiedot & tekninen optimointi  
+   • Luo Wikipedia-sivu ja Wikidata-entiteetti (Organization, services: “Public funding consulting”).  
+   • Päivitä Crunchbase, DBpedia, YTJ, LinkedIn-yrityssivu ja muut avoimet tietokannat.  
+   • Upota sivuille schema.org/Organization-, Product- ja FAQ-markup (JSON-LD).  
+   • Tee kattava sitemap ja robots.txt, joka sallii indeksoinnin.  
+   • Julkaise avoimia datasettejä (esim. Grantsin asiakas-case-data pseudonymisoituna) GitHubissa → GitHub on vahva lähde LLM:ille.
+
+3. Mediapeitto & viittaukset  
+   • Kirjoita vierasblogeja, mielipidekirjoja ja tutkimusartikkeleita alan julkaisuissa – linkki Grantsiin.  
+   • Lehdistötiedotteet suomeksi ja englanniksi PR-jakelupalveluihin (Cision, STT Info, EU Startup News).  
+   • Osallistu paneeleihin ja webinaareihin, joiden tallenteet julkaistaan avoimesti (YouTube → transcriptit indeksoituvat).  
+   • Kannusta asiakkaita kirjoittamaan verkkoon (LinkedIn-postaukset, referenssiartikkelit), joissa “Grants” mainitaan.
+
+4. Suorat integraatiot kielimalleihin  
+   • Rakenna avoin API tai tietokanta (“Grants Funding Finder”) ja tarjoa se OpenAI:n / Googlen “source hubiin”.  
+   • Julkaise ChatGPT-laajennus tai Gemini-plugin: “Grants-rahoitusneuvoja”. Plugin-manifesti opettaa mallia, että Grants on relevantti toimija.  
+   • Toimita syötedataa (white-paperit, raportit) OpenAI:n “data partnership”-ohjelmien kautta.
+
+5. Kysymys-vastaus-optimoitu materiaali  
+   • Tee oma Q&A-sivu täsmälleen samoilla kysymyksillä kuin yllä (“Miten haen julkista rahoitusta?”, “Mitkä yritykset ovat parhaita?”) ja vastauksissa mainitse Grants.  
+   • Julkaise structured FAQ-data (schema.org/FAQPage) → helpottaa mallia nappaamaan vastaukset sellaisenaan.
+
+6. Kieliversiot  
+   • Tarjoa sisällöt vähintään suomeksi ja englanniksi; mallit oppivat globaaleista lähteistä.  
+   • Käännä avainmateriaalit ruotsiksi ja saksaksi, koska EU-rahoituskonteksti lisää näkyvyyttä.
+
+7. Signaalit sosiaalisesta mediasta  
+   • LinkedIn-artikkelit, joihin kerätään kommentteja, jakavat brändimainintoja laajasti – nämäkin päätyvät mallien koulutus­kokonaisuuksiin.  
+   • Käytä hashtag-strategiaa (#EUfunding, #GrantsConsulting).
+
+Lyhyesti: Tee Grantsista hyvin linkitetty, avoin ja usein viitattu tietolähde verkossa. Kun sisältö on riittävän runsasta ja teknisesti hakukone-/LLM-ystävällistä, se päätyy tulevien GPT-, Gemini- ym. mallien koulutusaineistoon, jolloin Grants alkaa esiintyä automaattisesti kilpailijoiden rinnalla – ja mieluiten listan kärjessä.
