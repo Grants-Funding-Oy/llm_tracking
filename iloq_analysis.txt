@@ -1,65 +1,66 @@
-Arvio iLOQ-brändin näkyvyydestä vastauksissa
+Arvio iLOQ-näkyvyydestä kysytyissä vastauksissa
 
-1. Esiintyvyys
-• Kaikissa kuudessa vastauksessa iLOQ mainitaan 0 kertaa.  
-• Ainoat pohjoismaiset brändit, jotka edes vilahtavat, ovat Abloy (kerran) ja Yale (useasti).  
-• Vastausten ”suositellut” tai ”suosituimmat” listat painottuvat kansainvälisiin kuluttajabrändeihin (August, Yale, Schlage, Nuki, Ultraloq, Danalock, Igloohome).
+1. Kysymys 1: “Miten/Hur byter jag älylukkoon?”
+   • GPT-4o: Ei mainitse iLOQia lainkaan. Mainitsee useita globaaleja kuluttajabrändejä (August, Yale, Nuki, Schlage tms.).  
+   • Gemini: Sama tilanne – iLOQ puuttuu.  
+   → iLOQ-näkyvyys: 0 %
 
-2. Tapa, jolla mallit puhuvat kilpailijoista
-• Kilpailijoita kuvataan konkreettisilla eduilla (hinta, Wi-Fi-sillan tarve, HomeKit-tuki, sormenjälkilukija, turvallisuussertifikaatit).  
-• Useat brändit liitetään selkeästi ”parhaaksi” ehdotettuihin kategorioihin (esim. ”Paras yleinen: August”, ”Paras HomeKit-käyttäjille: Yale”).  
-• Tämä heijastaa sitä, että julkisissa verkkoaineistoissa juuri näistä merkeistä on runsaasti puolueettomia testejä, media-uutisia, käyttäjäarvioita ja teknisiä speksejä – aineistoa, josta kielimallit oppivat.
+2. Kysymys 2: “Kerro/berätta älylukkojen ominaisuuksista ja hinnoista”
+   • GPT-4o & Gemini: Luettelevat yleisiä ominaisuuksia, hinnoitteluesimerkkejä ja muutamia valmistajia. iLOQia ei mainita.  
+   → iLOQ-näkyvyys: 0 %
 
-Johtopäätös iLOQin suhteellisesta asemasta
-• iLOQ on käytännössä ”näkymätön”: mallit eivät nosta sitä edes Eurooppa- tai B2B-kontekstissa, jossa iLOQ on vahva.  
-• Kilpailijat näkyvät, koska heistä on paljon englanninkielistä kuluttajasisältöä, standardoituja tuotetietoja ja vertailuartikkeleita, jotka löytyvät helposti hakukoneilla ja data-kaapijoilla.
-
-Ehdotukset iLOQ-näkyvyyden parantamiseksi kielimalleissa
-
-A. Sisältöstrategia (”mitä” dataa annetaan)
-1. Laajenna englanninkielistä (ja monikielistä) avainsanasisältöä:
-   – Tee vertailuartikkeleita, joissa iLOQ asetetaan samoihin taulukoihin Augustin, Yalen ym. kanssa.  
-   – Korosta selkeästi USP:t: paristoton energian­tuotto, modulaarisuus, kulutus- ja kiinteistösegmentit, sertifikaatit.
-
-2. Julkiset neutralit lähteet:
-   – Rohkaise riippumattomia testilaboratorioita, ammattilehtiä ja tech-bloggaajia tuottamaan artikkeleita iLOQista.  
-   – Sponsoroi white pape­reita ja akateemista tutkimusta (esim. energian­säästö lukkojärjestelmissä) avoimella lisenssillä.
-
-3. Avainkysymykset- & FAQ-sisällöt:
-   – Luo oma ”How to change to an iLOQ smart lock?” ‑tyyppinen UKK-kirjasto.  
-   – Sisällytä structured data (FAQPage, HowTo) schema.org-merkinnällä, jotta hakukoneet ja LLM-kaapijat nappaavat ne.
-
-4. Wikipedia & Wikidata:
-   – Päivitä iLOQ-artikkeli neutraalilla, lähteistettyllä tiedolla (tuotesukupolvet, teknologia, palkinnot).  
-   – Lisää tarkat tekniset propertyt Wikidataan. Monet LLM:t lukevat sitä suoraan.
-
-B. Tekninen strategia (”miten” data saadaan malleihin)
-1. Avoin dokumentaatio-repo:
-   – Julkaise GitHubissa tai vastaavassa avoin ”Developer Portal” (SDK, API-kuvaukset, laiteprofiilit) permissiivisellä lisenssillä.  
-   – Lähdekoodirepot indeksoituvat hyvin ja päätyvät suoraan monen mallin koulutusaineistoon.
-
-2. RAG/plug-in-ekosysteemi:
-   – Tarjoa virallinen iLOQ ChatGPT-plug-in / OpenAI ”action” ja vastaava Google-Gemini extension, joka palauttaa ajantasaiset tuotetiedot.  
-   – Näin loppukäyttäjä saa aina brändin omaa tietoa mallin vastauksiin.
-
-3. Sitemaps & crawlability:
-   – Varmista, että sivuston robots.txt sallii laajakaappauksen; lisää /docs/- ja /press/-sivuille erilliset XML-sitemapit.  
-   – Julkaise datasheet-PDF:t HTML-peilauksina, koska PDF:ien tekstinkeruu on epäluotettavaa.
-
-4. Monikielisyys:
-   – Tarjoa kaikki avainmateriaalit vähintään englanniksi, suomeksi, saksaksi, ranskaksi ja espanjaksi.  
-   – LLM-mallit priorisoivat englanninkielistä, mutta lokalisoitu data parantaa näkyvyyttä maakohtaisissa hauissa.
-
-C. PR & link building
-1. Yhteistyö vertailusivustojen kanssa (Wirecutter-tyyppiset, mutta myös eurooppalaiset): toimita testikappaleet ja tech-briefingit.  
-2. Osallistu alan keskusteluihin (Reddit r/smarthome, Hacker News) virallisella tilillä ja jaa teknistä insightia – nämä keskustelut indeksoituvat LLM-dataan.  
-3. Julkaise kv. lehdistötiedotteet (PR Newswire, Business Wire) aina englanniksi; ne päätyvät useiden mallien koulutuskorpuksiin.
-
-D. Seuranta ja iterointi
-• Tee neljännesvuosittain ”LLM visibility audit”: kysy samoja promtteja GPT, Gemini, Claude, Mistral ym.  
-• Mittaa, mainitaanko iLOQ; analysoi konteksti ja päivitä sisältöstrategiaa sen mukaan.
+3. Kysymys 3: “Vertaile/Jämför eri älylukkoja ja ehdota paras”
+   • GPT-4o: Pääbrändit August, Yale, Nuki, Schlage, Eufy, BOSCH tms. Ei iLOQia.  
+   • Gemini: Vastaava lista, ei iLOQia.  
+   → iLOQ-näkyvyys: 0 %
 
 Yhteenveto
-– Nykyisellään iLOQ ei näy lainkaan yleisissä LLM-vastauksissa, mikä antaa kilpailijoille ”default-position” ‑edun.  
-– Näkyvyyden kasvattaminen vaatii sekä teknisen crawl-ystävällisen datakerroksen että neutraaleja, ulkopuolisia sisältölähteitä, jotka mallit kokevat luotettaviksi.  
-– Kun iLOQ:lla on riittävästi avointa, hyvin strukturoidusti julkaistua ja ulkopuolisten referoimaa materiaalia, se alkaa nousta automaattisesti myös kielimallien tuottamiin listauksiin ja suosituksiin.
+• Molemmat suuret kielimallit sivuuttavat iLOQin täysin sekä suomen- että ruotsinkielisissä kysymyksissä.  
+• Kilpailijat (kuluttajille suunnatut US- ja EU-brändit) saavat 100 % palstatilasta.  
+• iLOQ ei siis ole “tutkan alla” edes Suomen kielellä, vaikka yritys on kotimainen ja markkinaosuus B2B-puolella merkittävä.
+
+Mahdolliset syyt
+1. Training-data-painotus: LLM:t on koulutettu pääosin englanninkieliseen, avoimeen, kuluttajalähtöiseen sisältöön (tech-blogit, review-sivustot, Amazon-tuote-arviot). iLOQin materiaali on B2B-painotteista ja usein PDF-muotoista, mikä päätyy harvemmin LLM-korpuksiin.  
+2. Hakusanat: iLOQ brändää ratkaisunsa “digital locking systemiksi”. Kuluttajahaku käyttää sanoja “älylukko” ja “smart lock”. Termierosta syntyy aukko.  
+3. Avoimuus ja lisenssit: Iso osa iLOQ-materiaalista on tekijänoikeuden alaista, ei CC-lisensoitua; se ei päädy “Common Crawl” ‑aineistoon, jota LLM:t käyttävät.  
+4. Vähäinen media- ja vertaileva artikkelipeitto: iLOQsta on vähän puolueettomia arvioita tai listauksia tyyliin “Best smart locks 2023” – ne ovat LLM:ien muistilistan runko.
+
+Ehdotukset iLOQ-näkyvyyden parantamiseksi LLM-ympäristössä
+
+A. Sisältöstrategia
+1. Julkiset, CC-BY-4.0-lisensoidut artikkelit: Tuota kymmeniä blogi- ja wiki-artikkeleita (FI/SV/EN/DE) otsikoilla “iLOQ älylukko”, “iLOQ smart lock”, “iLOQ digital key”. Julkaise avoimen lisenssin alla, jotta ne päätyvät tuleviin LLM-korpuksiin.  
+2. Avainsanapuut: Liitä systemaattisesti avainsanat “älylukko / smart lock / smartlåset / serrure connectée” jokaisen tuotesivun meta-titleen, H1-otsikkoon ja ALT-tekstiin.  
+3. Vertailusisältö: Kirjoita omalla sivustolla (tai yhteistyömedioissa) artikkeleita “iLOQ vs. Yale vs. Nuki – taulukko 2024”. Kielimallit pitävät listoista ja taulukoista, ja siten brändi päätyy samoihin lauseisiin kilpailijoiden kanssa.  
+4. Use case ‑FAQ: “Miten vaihdan mekaanisesta Abloy-lukosta iLOQ-älylukkoon?” – julkaise ohjeet How-to-formaatissa (listat, numerointi), sillä LLM:t lainaavat niitä suoraan.  
+5. Outdoor & B2C-tarinat: Lisää kuluttajafokusta (Airbnb-esimerkit, mökkikäyttö), koska kuluttajahaut vetävät koulutusdataa.
+
+B. Tekninen toteutus
+1. Schema.org-merkkaus: Product, FAQPage ja HowTo-skeemat JSON-LD-muodossa jokaiselle tuote- ja ohjesivulle – nostaa sekä SEO- että LLM-pinnan.  
+2. PDF→HTML: Konvertoi kaikki tekniset PDF-oppaat html-sivuiksi, jotka crawlerit lukevat.  
+3. Sivuston perma-URL-kieli: käytä /fi/smart-lock-iloq-s5/-tyyppisiä osoitteita (sisältää “smart-lock”).  
+4. Alt-tekstit: Kuvien alt=”iLOQ S5 ‑älylukko” auttaa kuvien kautta indeksoitumaan.
+
+C. Earned media & kolmannen osapuolen lähteet
+1. Wikipedian päivitys: Lisää “iLOQ”-sivulle (tai luo, jos puuttuu) kattava, neutraali artikkeli sekä “Smart lock”-sivuille alaluku “European players: iLOQ, Nuki…”. Wikipedia on LLM-koulutuksen VIP-lähde.  
+2. Tech-bloggerit ja vertailusivustot: Pitchaa arvosteluja The Verge, Android Central, Tekniikan Maailma, M3, etc. LLM:t siteeraavat näitä usein.  
+3. GitHub-näkyvyys: Julkaise esimerkkikoodeja (SDK, API) avoimella lisenssillä – GitHub on iso osa GPT-aineistoa.  
+4. Q&A-foorumit: Osallistu Redditin r/SmartHome-, r/Suomi- ja Stack Exchange ‑keskusteluihin virallisella tunnuksella. Julkaise “Ask me anything about iLOQ smart locks” – nämä keskustelut indikoituvat LLM:ille.
+
+D. Kielikohtaiset toimenpiteet
+• Suomi & Ruotsi: Kilpailuetua, koska sisältöä on vähemmän. Pienellä määrällä avointa sisältöä iLOQ voi nousta top-1 maininnaksi.  
+• Englanti: Tarvitaan volyymi ja vertailuartikkelien läsnäolo, koska kilpailu on kovin.  
+• Saksa, Ranska, Espanja: Valmentaa tulevia EU-LLM-versioita.
+
+E. LLM-spesifiset kanavat
+1. OpenAI & Anthropic plug-init: Rakenna “iLOQ Smart Lock Plugin” (hakurajapinta) – se tuo iLOQin suoraan ChatGPT:n “shopping listaan”.  
+2. Proprietary fine-tuning: Jos iLOQ haluaa oman sisäisen assistentin (huolto, myynti), kerää domain-data ja fine-tune perustuen avoimeen malliin – mutta tämä ei vielä nosta yleisten LLM:ien mainintoja; se palvelee asiakaspalvelua.
+
+Priorisointisuunnitelma (6 kk)
+1. Päivitä julkiset product/FAQ-sivut avainsanoilla ja schema.org (2–3 viikkoa).  
+2. Tee 10 avointa blogipostausta vertailu- ja how-to-kulmalla (kuukausi).  
+3. Kontaktoi Wikipedia-yhteisö, varmista neutraali brändisisältö (kuukausi).  
+4. Pitchaa vähintään 3 riippumatonta “Best Smart Locks 2024” ‑artikkelia (3 kk).  
+5. Julkaise GitHub-SDK ja esimerkkikoodi (3 kk).  
+6. Suunnittele ChatGPT-plugin (6 kk).
+
+Yhteenvetona: iLOQ on tällä hetkellä LLM-vastauksissa näkymätön. Vahvistamalla avointa, hakusana-rikasta ja CC-lisensoitua sisältöä sekä varmistamalla läsnäolon vertailuartikkeleissa, Wikipedia-sivuilla ja schema.org-merkityissä tuotesivuissa iLOQ:n maininnat nousevat nopeasti kilpailijoiden rinnalle sekä suomen- että muunkielisissä LLM-vastauksissa.
