@@ -6,6 +6,7 @@ import google.generativeai as genai
 import pandas as pd
 from datetime import datetime
 from dotenv import load_dotenv
+from agents import Agent, Runner, WebSearchTool
 
 # Load environment variables from .env file
 load_dotenv()
@@ -56,6 +57,24 @@ def get_gemini_response(prompt):
         print(f"Error getting response from Gemini: {e}")
         return f"Error: {str(e)}"
 
+def get_agent_with_websearch_response(query):
+    """
+    Get a response from OpenAI GPT-4o agent with web search capability
+    """
+    try:
+        agent = Agent(
+            name="SearchAgent",
+            model="gpt-4o",
+            instructions="Olet avulias asiantuntija, jolla on pääsy verkkohakuun. Käytä verkkohakua etsiäksesi ajantasaista tietoa vastataksesi kysymyksiin. Erityisesti kun kysytään julkisesta rahoituksesta tai konsultointipalveluista, tarkista faktat verkosta.",
+            tools=[WebSearchTool()]
+        )
+        
+        result = Runner.run_sync(agent, query)
+        return result.final_output
+    except Exception as e:
+        print(f"Error getting response from Agent with web search: {e}")
+        return f"Error: {str(e)}"
+
 def analyze_conversation(conversation_df):
     """
     Analyze the conversation using OpenAI o3 to evaluate Grants visibility
@@ -66,12 +85,20 @@ def analyze_conversation(conversation_df):
         if row['Type'] == 'question':  # Only include question rows in the analysis
             conversation_str += f"Kysymys {row['QuestionNumber']}: {row['Question']}\n"
             conversation_str += f"Vastaus {row['QuestionNumber']} (GPT-4o): {row['GPT4o_Answer'][:500]}...\n"
-            conversation_str += f"Vastaus {row['QuestionNumber']} (Gemini): {row['Gemini_Answer'][:500]}...\n\n"
+            conversation_str += f"Vastaus {row['QuestionNumber']} (Gemini): {row['Gemini_Answer'][:500]}...\n"
+            conversation_str += f"Vastaus {row['QuestionNumber']} (Agent + WebSearch): {row['Agent_Answer'][:500]}...\n\n"
     
     # Create the prompt for analysis
     analysis_prompt = [
         {"role": "system", "content": "You are an expert in brand analysis and marketing."},
-        {"role": "user", "content": f"""Ohessa on käyttäjän kielimallille esittämät kysymykset ja kielimallin antamat vastaukset. Arvioi miten hyvin Grants näkyy vastauksissa ja miten kielimallit esittävät Grantsin suhteessa kilpailijoihin. Lopuksi ehdota miten näkyvyyttä kielimallien osalta voisi kehittää (huomioi tekniset ja sisällölliset asiat)
+        {"role": "user", "content": f"""Ohessa on käyttäjän kielimallille esittämät kysymykset ja kielimallin antamat vastaukset. Arvioi miten hyvin Grants näkyy vastauksissa ja miten kielimallit esittävät Grantsin suhteessa kilpailijoihin. 
+
+Vertaile erityisesti kolmen eri vastaajamallin eroja:
+1. GPT-4o (ei web-hakua)
+2. Gemini (ei web-hakua) 
+3. Agent + WebSearch (pääsy ajantasaiseen verkkotietoon)
+
+Analysoi miten Grantsin näkyvyys eroaa perustuen siihen, onko mallilla pääsy verkkoon vai ei. Lopuksi ehdota miten näkyvyyttä kielimallien osalta voisi kehittää (huomioi tekniset ja sisällölliset asiat).
 
 {conversation_str}"""}
     ]
@@ -96,6 +123,7 @@ def main():
         'Question',
         'GPT4o_Answer',
         'Gemini_Answer',
+        'Agent_Answer',
         'Timestamp',
         'Type'
     ])
@@ -119,6 +147,9 @@ def main():
     print(f"Asking Gemini initial question: {initial_question}")
     initial_gemini_answer = get_gemini_response(initial_question)
     
+    print(f"Asking Agent with WebSearch initial question: {initial_question}")
+    initial_agent_answer = get_agent_with_websearch_response(initial_question)
+    
     # Add assistant's responses to conversation histories
     gpt_messages.append({"role": "assistant", "content": initial_gpt_answer})
     
@@ -131,6 +162,7 @@ def main():
             'Question': initial_question,
             'GPT4o_Answer': initial_gpt_answer,
             'Gemini_Answer': initial_gemini_answer,
+            'Agent_Answer': initial_agent_answer,
             'Timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             'Type': 'question'
         }])
@@ -149,6 +181,9 @@ def main():
     print(f"Asking Gemini follow-up question: {followup_question}")
     followup_gemini_answer = get_gemini_response(followup_question)
     
+    print(f"Asking Agent with WebSearch follow-up question: {followup_question}")
+    followup_agent_answer = get_agent_with_websearch_response(followup_question)
+    
     # Add assistant's responses to conversation histories
     gpt_messages.append({"role": "assistant", "content": followup_gpt_answer})
     
@@ -161,6 +196,7 @@ def main():
             'Question': followup_question,
             'GPT4o_Answer': followup_gpt_answer,
             'Gemini_Answer': followup_gemini_answer,
+            'Agent_Answer': followup_agent_answer,
             'Timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             'Type': 'question'
         }])
@@ -179,6 +215,9 @@ def main():
     print(f"Asking Gemini third question: {third_question}")
     third_gemini_answer = get_gemini_response(third_question)
     
+    print(f"Asking Agent with WebSearch third question: {third_question}")
+    third_agent_answer = get_agent_with_websearch_response(third_question)
+    
     # Add assistant's responses to conversation histories
     gpt_messages.append({"role": "assistant", "content": third_gpt_answer})
     
@@ -191,6 +230,7 @@ def main():
             'Question': third_question,
             'GPT4o_Answer': third_gpt_answer,
             'Gemini_Answer': third_gemini_answer,
+            'Agent_Answer': third_agent_answer,
             'Timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             'Type': 'question'
         }])
@@ -212,6 +252,9 @@ def main():
     print(f"Asking Gemini fourth question: {fourth_question}")
     fourth_gemini_answer = get_gemini_response(fourth_question)
     
+    print(f"Asking Agent with WebSearch fourth question: {fourth_question}")
+    fourth_agent_answer = get_agent_with_websearch_response(fourth_question)
+    
     # Add to DataFrame
     conversation_df = pd.concat([
         conversation_df,
@@ -221,6 +264,7 @@ def main():
             'Question': fourth_question,
             'GPT4o_Answer': fourth_gpt_answer,
             'Gemini_Answer': fourth_gemini_answer,
+            'Agent_Answer': fourth_agent_answer,
             'Timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             'Type': 'question'
         }])
@@ -239,6 +283,7 @@ def main():
             'Question': "Brändianalyysi: Grants-brändin näkyvyys vastauksissa",
             'GPT4o_Answer': analysis,
             'Gemini_Answer': "Analyysi tehty OpenAI o3-mallilla",
+            'Agent_Answer': "Analyysi tehty OpenAI o3-mallilla",
             'Timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             'Type': 'analysis'
         }])
@@ -254,18 +299,22 @@ def main():
     print(f"Question 1: {initial_question}")
     print(f"GPT-4o Answer 1: {initial_gpt_answer[:100]}...")
     print(f"Gemini Answer 1: {initial_gemini_answer[:100]}...")
+    print(f"Agent+WebSearch Answer 1: {initial_agent_answer[:100]}...")
     
     print(f"Question 2: {followup_question}")
     print(f"GPT-4o Answer 2: {followup_gpt_answer[:100]}...")
     print(f"Gemini Answer 2: {followup_gemini_answer[:100]}...")
+    print(f"Agent+WebSearch Answer 2: {followup_agent_answer[:100]}...")
     
     print(f"Question 3: {third_question}")
     print(f"GPT-4o Answer 3: {third_gpt_answer[:100]}...")
     print(f"Gemini Answer 3: {third_gemini_answer[:100]}...")
+    print(f"Agent+WebSearch Answer 3: {third_agent_answer[:100]}...")
     
     print(f"Question 4 (without history): {fourth_question}")
     print(f"GPT-4o Answer 4: {fourth_gpt_answer[:100]}...")
     print(f"Gemini Answer 4: {fourth_gemini_answer[:100]}...")
+    print(f"Agent+WebSearch Answer 4: {fourth_agent_answer[:100]}...")
     
     # Print a snippet of the analysis
     print("\nAnalysis Snippet (by OpenAI o3):")
